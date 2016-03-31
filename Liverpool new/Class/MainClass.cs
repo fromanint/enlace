@@ -10,6 +10,7 @@ namespace Liverpool_new.Formularios
     public class MainClass
     {
         public List<Pedido> pedido = new List<Pedido>();
+        public List<Modelo> modelo = new List<Modelo>();
         public string NombreArchivo;
 
         //Abrir archivo
@@ -45,6 +46,8 @@ namespace Liverpool_new.Formularios
         
         string ArchivoCSV(string NombreArchivo) {
             System.IO.StreamReader sr = new System.IO.StreamReader(NombreArchivo);
+            pedido.Clear();
+            modelo.Clear();
             while (sr.Peek() != -1)
             {
                 char[] delimiterChars = { ',' };
@@ -53,16 +56,8 @@ namespace Liverpool_new.Formularios
                 {
                     string lineas = sr.ReadLine();
                     string[] settemporal = lineas.Split(delimiterChars);
-                        string aux;
-                        string nopedido = settemporal[0].Replace("  ", string.Empty);
-                        int tienda = int.Parse(settemporal[2]);
-                        int modelo = int.Parse(settemporal[5]);
-                        aux = settemporal[7];
-                        string talla = aux.Replace("T", string.Empty);        
-                        int cantidad = int.Parse(settemporal[12]);
-                        string color = settemporal[6];
-                        Pedido temporal = new Pedido(nopedido, tienda, modelo, talla, cantidad, color);
-                    pedido.Add(temporal);                  
+                    AgregarListaPedido(settemporal[0], int.Parse(settemporal[18]), int.Parse(settemporal[7]), settemporal[9], int.Parse(settemporal[19]), settemporal[8]);
+                    AgregarListaModelo(settemporal[7], settemporal[8], settemporal[9], settemporal[13], settemporal[5], settemporal[16]);              
                 }
                 catch
                 {
@@ -77,11 +72,11 @@ namespace Liverpool_new.Formularios
 
         string ArchivoTXT(string NombreArchivo) {
             System.IO.StreamReader sr = new System.IO.StreamReader(NombreArchivo);
+            pedido.Clear();
+            modelo.Clear();
             while (sr.Peek() != -1)
             {
-                char[] delimiterChars = { ',' };
-
-                try
+                 try
                 {
                     string lineas = sr.ReadLine();
 
@@ -105,6 +100,18 @@ namespace Liverpool_new.Formularios
                 return "No es un archivo valido";
         }
 
+        void AgregarListaPedido(string no, int tie, int mod, string tall, int cant, string col) {
+            string nopedido = no.Replace("  ", string.Empty);
+            string talla = tall.Replace("T", string.Empty);
+            Pedido temporal = new Pedido(nopedido, tie, mod, talla, cant, col);
+            pedido.Add(temporal);
+        }
+        void AgregarListaModelo(string mod, string col, string tall, string fecha, string codigo, string pre) {
+            if (tall.IndexOf("T") < 0 || tall.IndexOf("t") < 0)
+            { tall += "T"; }
+            Modelo temporal = new Modelo(mod, col, tall, fecha, codigo, pre);
+            modelo.Add(temporal);
+        }
         //Crear hoja de excel
         public void Crear_Pedido() {
 

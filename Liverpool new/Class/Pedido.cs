@@ -26,10 +26,6 @@ namespace Liverpool_new.Class
             color = col;
         }
 
-        public Pedido()
-        {
-        }
-
         public string GetNoPedido() {
             return nopedido;
         }
