@@ -77,10 +77,24 @@ namespace Liverpool_new.Formularios
 
         string ArchivoTXT(string NombreArchivo) {
             System.IO.StreamReader sr = new System.IO.StreamReader(NombreArchivo);
-            while (sr.Peek() != -1) { 
+            while (sr.Peek() != -1)
+            {
+                char[] delimiterChars = { ',' };
+
+                try
+                {
+                    string lineas = sr.ReadLine();
+
+                }
+                catch
+                {
+                }
+
+
+
             }
             sr.Close();
-             return Regresa_NoPedido();
+            return Regresa_NoPedido();
         }
 
         public string Regresa_NoPedido()

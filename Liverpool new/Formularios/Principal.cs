@@ -24,7 +24,7 @@ namespace Liverpool_new
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Operaciones.Hide();
         }
 
         private void btnVersion_Click(object sender, EventArgs e)
@@ -64,9 +64,17 @@ namespace Liverpool_new
         {
             if (AbrirArchivo.ShowDialog() == DialogResult.OK)
             {
-                
-                txtPedido.Text = mc.AbrirArchivo(AbrirArchivo.FileName);
+                string nopedido = mc.AbrirArchivo(AbrirArchivo.FileName);
 
+                if (nopedido != "No es un archivo valido")
+                {
+                    txtPedido.Text = nopedido;
+                    Operaciones.Show();
+                }
+                else
+                {
+                    MessageBox.Show("No es un archivo valido");
+                }
             }
         }
 

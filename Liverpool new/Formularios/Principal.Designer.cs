@@ -28,35 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Operaciones = new System.Windows.Forms.GroupBox();
             this.btnEmbarque = new System.Windows.Forms.Button();
             this.btnEtiVestidos = new System.Windows.Forms.Button();
             this.btnPedidoExcel = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Administrar = new System.Windows.Forms.GroupBox();
             this.btnTienda = new System.Windows.Forms.Button();
             this.btnVersion = new System.Windows.Forms.Button();
             this.AbrirArchivo = new System.Windows.Forms.OpenFileDialog();
             this.txtPedido = new System.Windows.Forms.TextBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.Operaciones.SuspendLayout();
+            this.Administrar.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // Operaciones
             // 
-            this.groupBox1.Controls.Add(this.btnEmbarque);
-            this.groupBox1.Controls.Add(this.btnEtiVestidos);
-            this.groupBox1.Controls.Add(this.btnPedidoExcel);
-            this.groupBox1.Location = new System.Drawing.Point(33, 127);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(518, 98);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Operaciones";
+            this.Operaciones.Controls.Add(this.checkedListBox1);
+            this.Operaciones.Controls.Add(this.btnEmbarque);
+            this.Operaciones.Controls.Add(this.btnEtiVestidos);
+            this.Operaciones.Controls.Add(this.btnPedidoExcel);
+            this.Operaciones.Location = new System.Drawing.Point(33, 67);
+            this.Operaciones.Name = "Operaciones";
+            this.Operaciones.Size = new System.Drawing.Size(526, 182);
+            this.Operaciones.TabIndex = 0;
+            this.Operaciones.TabStop = false;
+            this.Operaciones.Text = "Operaciones";
             // 
             // btnEmbarque
             // 
-            this.btnEmbarque.Location = new System.Drawing.Point(379, 30);
+            this.btnEmbarque.Location = new System.Drawing.Point(269, 33);
             this.btnEmbarque.Name = "btnEmbarque";
             this.btnEmbarque.Size = new System.Drawing.Size(99, 51);
             this.btnEmbarque.TabIndex = 1;
@@ -66,7 +67,7 @@
             // 
             // btnEtiVestidos
             // 
-            this.btnEtiVestidos.Location = new System.Drawing.Point(203, 30);
+            this.btnEtiVestidos.Location = new System.Drawing.Point(146, 33);
             this.btnEtiVestidos.Name = "btnEtiVestidos";
             this.btnEtiVestidos.Size = new System.Drawing.Size(99, 51);
             this.btnEtiVestidos.TabIndex = 2;
@@ -76,7 +77,7 @@
             // 
             // btnPedidoExcel
             // 
-            this.btnPedidoExcel.Location = new System.Drawing.Point(19, 30);
+            this.btnPedidoExcel.Location = new System.Drawing.Point(23, 33);
             this.btnPedidoExcel.Name = "btnPedidoExcel";
             this.btnPedidoExcel.Size = new System.Drawing.Size(99, 51);
             this.btnPedidoExcel.TabIndex = 0;
@@ -84,15 +85,15 @@
             this.btnPedidoExcel.UseVisualStyleBackColor = true;
             this.btnPedidoExcel.Click += new System.EventHandler(this.btnPedidoExcel_Click);
             // 
-            // groupBox2
+            // Administrar
             // 
-            this.groupBox2.Controls.Add(this.btnTienda);
-            this.groupBox2.Location = new System.Drawing.Point(590, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(189, 213);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Administrar";
+            this.Administrar.Controls.Add(this.btnTienda);
+            this.Administrar.Location = new System.Drawing.Point(590, 12);
+            this.Administrar.Name = "Administrar";
+            this.Administrar.Size = new System.Drawing.Size(189, 213);
+            this.Administrar.TabIndex = 1;
+            this.Administrar.TabStop = false;
+            this.Administrar.Text = "Administrar";
             // 
             // btnTienda
             // 
@@ -122,7 +123,7 @@
             // 
             // txtPedido
             // 
-            this.txtPedido.Location = new System.Drawing.Point(117, 41);
+            this.txtPedido.Location = new System.Drawing.Point(106, 12);
             this.txtPedido.Name = "txtPedido";
             this.txtPedido.ReadOnly = true;
             this.txtPedido.Size = new System.Drawing.Size(159, 20);
@@ -135,9 +136,9 @@
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(345, 12);
+            this.checkedListBox1.Location = new System.Drawing.Point(403, 19);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(84, 109);
+            this.checkedListBox1.Size = new System.Drawing.Size(101, 154);
             this.checkedListBox1.TabIndex = 4;
             // 
             // Principal
@@ -145,17 +146,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 261);
-            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.txtPedido);
             this.Controls.Add(this.btnVersion);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.Administrar);
+            this.Controls.Add(this.Operaciones);
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.Operaciones.ResumeLayout(false);
+            this.Administrar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,9 +163,9 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox Operaciones;
         private System.Windows.Forms.Button btnPedidoExcel;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox Administrar;
         private System.Windows.Forms.Button btnEmbarque;
         private System.Windows.Forms.Button btnEtiVestidos;
         private System.Windows.Forms.Button btnTienda;
