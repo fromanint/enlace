@@ -1,0 +1,24 @@
+c:\users\yo\documents\visual studio 2015\Projects\Liverpool new\Liverpool new\bin\Debug\Liverpool new.exe.config
+C:\Users\YO\documents\visual studio 2015\Projects\Liverpool new\Liverpool new\bin\Debug\Liverpool new.exe
+C:\Users\YO\documents\visual studio 2015\Projects\Liverpool new\Liverpool new\bin\Debug\Liverpool new.pdb
+C:\Users\YO\documents\visual studio 2015\Projects\Liverpool new\Liverpool new\obj\Debug\Liverpool new.csprojResolveAssemblyReference.cache
+C:\Users\YO\documents\visual studio 2015\Projects\Liverpool new\Liverpool new\obj\Debug\Liverpool_new.Properties.Resources.resources
+C:\Users\YO\documents\visual studio 2015\Projects\Liverpool new\Liverpool new\obj\Debug\Liverpool new.csproj.GenerateResource.Cache
+C:\Users\YO\documents\visual studio 2015\Projects\Liverpool new\Liverpool new\obj\Debug\Liverpool new.exe
+C:\Users\YO\documents\visual studio 2015\Projects\Liverpool new\Liverpool new\obj\Debug\Liverpool new.pdb
+C:\Users\YO\documents\visual studio 2015\Projects\Liverpool new\Liverpool new\obj\Debug\Liverpool_new.Formularios.Eti_Cajas.resources
+C:\Users\YO\documents\visual studio 2015\Projects\Liverpool new\Liverpool new\obj\Debug\Liverpool_new.Principal.resources
+C:\Users\YO\documents\visual studio 2015\Projects\Liverpool new\Liverpool new\obj\Debug\Liverpool_new.Formularios.About.resources
+C:\Users\YO\documents\visual studio 2015\Projects\Liverpool new\Liverpool new\obj\Debug\Liverpool_new.Formularios.Tiendas.resources
+C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool new\bin\Debug\Liverpool new.exe.config
+C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool new\obj\Debug\Liverpool new.exe
+C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool new\obj\Debug\Liverpool new.pdb
+C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool new\bin\Debug\Liverpool new.exe
+C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool new\bin\Debug\Liverpool new.pdb
+C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool new\obj\Debug\Liverpool new.csprojResolveAssemblyReference.cache
+C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool new\obj\Debug\Liverpool_new.Formularios.About.resources
+C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool new\obj\Debug\Liverpool_new.Formularios.Eti_Cajas.resources
+C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool new\obj\Debug\Liverpool_new.Principal.resources
+C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool new\obj\Debug\Liverpool_new.Formularios.Tiendas.resources
+C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool new\obj\Debug\Liverpool_new.Properties.Resources.resources
+C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool new\obj\Debug\Liverpool new.csproj.GenerateResource.Cache
