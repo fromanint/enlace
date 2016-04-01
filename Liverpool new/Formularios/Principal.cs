@@ -25,6 +25,7 @@ namespace Liverpool_new
         private void Form1_Load(object sender, EventArgs e)
         {
             Operaciones.Hide();
+            mc.CrearDirectorio();
         }
 
         private void btnVersion_Click(object sender, EventArgs e)

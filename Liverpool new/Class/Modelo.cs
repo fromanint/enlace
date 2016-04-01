@@ -27,6 +27,25 @@ namespace Liverpool_new.Class
             sku = codigo;
             precio = pre;   
         }
+        public Modelo()
+        { }
+
+        public bool Equals(Modelo other, bool tall)
+        {
+            if(!tall)
+            {
+                return string.Equals(modelo, other.modelo);
+            }
+            return string.Equals(modelo, other.modelo) && string.Equals(talla, other.talla);
+
+        }
+
+        public string ObtenerModelo()
+        {
+            return modelo;
+        }
+
+
     }
 
 

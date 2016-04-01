@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,10 +14,23 @@ namespace Liverpool_new.Formularios
         public List<Modelo> modelo = new List<Modelo>();
         public string NombreArchivo;
 
+        //Al Abrir por primera Vez crear directorio para archivos de Salida
+        public void CrearDirectorio(string ruta = "Output")
+        {
+            if (Directory.Exists(ruta))
+            { 
+                Console.WriteLine("That path exists already.");
+            }
+            else
+            {
+                DirectoryInfo di = Directory.CreateDirectory(ruta);
+            }
+        }
+
         //Abrir archivo
         public string AbrirArchivo(string NombreArchivo)
         {
-            string extension = System.IO.Path.GetExtension(NombreArchivo);
+            string extension = Path.GetExtension(NombreArchivo);
             switch (extension)
             {
                 case ".csv":
@@ -45,7 +59,7 @@ namespace Liverpool_new.Formularios
         //leer archivo CSV
         
         string ArchivoCSV(string NombreArchivo) {
-            System.IO.StreamReader sr = new System.IO.StreamReader(NombreArchivo);
+            StreamReader sr = new StreamReader(NombreArchivo);
             pedido.Clear();
             modelo.Clear();
             while (sr.Peek() != -1)
@@ -57,7 +71,9 @@ namespace Liverpool_new.Formularios
                     string lineas = sr.ReadLine();
                     string[] settemporal = lineas.Split(delimiterChars);
                     AgregarListaPedido(settemporal[0], int.Parse(settemporal[18]), int.Parse(settemporal[7]), settemporal[9], int.Parse(settemporal[19]), settemporal[8]);
-                    AgregarListaModelo(settemporal[7], settemporal[8], settemporal[9], settemporal[13], settemporal[5], settemporal[16]);              
+                    AgregarListaModelo(settemporal[7], settemporal[8], settemporal[9], settemporal[13], settemporal[5], settemporal[16]);
+               
+                               
                 }
                 catch
                 {
@@ -66,12 +82,15 @@ namespace Liverpool_new.Formularios
 
 
             }
+
+            List<Modelo> ModNoRep = EliminarRepetidos() ;
+            modelo = ModNoRep;
             sr.Close();
             return Regresa_NoPedido();
         }
 
         string ArchivoTXT(string NombreArchivo) {
-            System.IO.StreamReader sr = new System.IO.StreamReader(NombreArchivo);
+           StreamReader sr = new StreamReader(NombreArchivo);
             pedido.Clear();
             modelo.Clear();
             while (sr.Peek() != -1)
@@ -109,6 +128,10 @@ namespace Liverpool_new.Formularios
         void AgregarListaModelo(string mod, string col, string tall, string fecha, string codigo, string pre) {
             if (tall.IndexOf("T") < 0 || tall.IndexOf("t") < 0)
             { tall += "T"; }
+            if (tall == "3X" || tall == "3x")
+            {
+                tall = "4T";
+            }
             Modelo temporal = new Modelo(mod, col, tall, fecha, codigo, pre);
             modelo.Add(temporal);
         }
@@ -118,11 +141,35 @@ namespace Liverpool_new.Formularios
         }
         //Crear archivo de etiquetas Zebra M4
         public void Crear_Etiquetas() {
+            string modelos = "Output//Etiquetas//";
+            foreach (Modelo mod in modelo)
+            {
+                modelos += mod.ObtenerModelo() + "-";
+            }
+            modelos.Remove(modelos.Length-1);
+            CrearDirectorio(modelos);
         }
         //Crear archivo de etiquetas de embarque
         public void Crear_Etiquetas_Embarque()
         {
         }
+
+        //Generales
+        List<Modelo> EliminarRepetidos(bool talla = false) {
+            List<Modelo> filtro = new List<Modelo>();
+            
+            for(int i =0;i<modelo.Count()-1;i++)
+               {
+             
+                if (!modelo[i+1].Equals(modelo[i],talla))
+                {
+                    Modelo mod = modelo[i];
+                    filtro.Add(mod);
+                }   
+            }
+            return filtro;
+        }
+
 
 
     }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.Operaciones = new System.Windows.Forms.GroupBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.btnEmbarque = new System.Windows.Forms.Button();
             this.btnEtiVestidos = new System.Windows.Forms.Button();
             this.btnPedidoExcel = new System.Windows.Forms.Button();
@@ -37,7 +38,7 @@
             this.btnVersion = new System.Windows.Forms.Button();
             this.AbrirArchivo = new System.Windows.Forms.OpenFileDialog();
             this.txtPedido = new System.Windows.Forms.TextBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.btnBasicos = new System.Windows.Forms.Button();
             this.Operaciones.SuspendLayout();
             this.Administrar.SuspendLayout();
             this.SuspendLayout();
@@ -55,9 +56,17 @@
             this.Operaciones.TabStop = false;
             this.Operaciones.Text = "Operaciones";
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(403, 19);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(101, 154);
+            this.checkedListBox1.TabIndex = 4;
+            // 
             // btnEmbarque
             // 
-            this.btnEmbarque.Location = new System.Drawing.Point(269, 33);
+            this.btnEmbarque.Location = new System.Drawing.Point(256, 69);
             this.btnEmbarque.Name = "btnEmbarque";
             this.btnEmbarque.Size = new System.Drawing.Size(99, 51);
             this.btnEmbarque.TabIndex = 1;
@@ -67,7 +76,7 @@
             // 
             // btnEtiVestidos
             // 
-            this.btnEtiVestidos.Location = new System.Drawing.Point(146, 33);
+            this.btnEtiVestidos.Location = new System.Drawing.Point(133, 69);
             this.btnEtiVestidos.Name = "btnEtiVestidos";
             this.btnEtiVestidos.Size = new System.Drawing.Size(99, 51);
             this.btnEtiVestidos.TabIndex = 2;
@@ -77,7 +86,7 @@
             // 
             // btnPedidoExcel
             // 
-            this.btnPedidoExcel.Location = new System.Drawing.Point(23, 33);
+            this.btnPedidoExcel.Location = new System.Drawing.Point(10, 69);
             this.btnPedidoExcel.Name = "btnPedidoExcel";
             this.btnPedidoExcel.Size = new System.Drawing.Size(99, 51);
             this.btnPedidoExcel.TabIndex = 0;
@@ -87,6 +96,7 @@
             // 
             // Administrar
             // 
+            this.Administrar.Controls.Add(this.btnBasicos);
             this.Administrar.Controls.Add(this.btnTienda);
             this.Administrar.Location = new System.Drawing.Point(590, 12);
             this.Administrar.Name = "Administrar";
@@ -97,9 +107,9 @@
             // 
             // btnTienda
             // 
-            this.btnTienda.Location = new System.Drawing.Point(39, 29);
+            this.btnTienda.Location = new System.Drawing.Point(41, 19);
             this.btnTienda.Name = "btnTienda";
-            this.btnTienda.Size = new System.Drawing.Size(125, 37);
+            this.btnTienda.Size = new System.Drawing.Size(116, 28);
             this.btnTienda.TabIndex = 0;
             this.btnTienda.Text = "Tiendas";
             this.btnTienda.UseVisualStyleBackColor = true;
@@ -133,13 +143,14 @@
             this.txtPedido.Click += new System.EventHandler(this.txtPedido_Click);
             this.txtPedido.TextChanged += new System.EventHandler(this.txtPedido_TextChanged);
             // 
-            // checkedListBox1
+            // btnBasicos
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(403, 19);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(101, 154);
-            this.checkedListBox1.TabIndex = 4;
+            this.btnBasicos.Location = new System.Drawing.Point(41, 55);
+            this.btnBasicos.Name = "btnBasicos";
+            this.btnBasicos.Size = new System.Drawing.Size(116, 28);
+            this.btnBasicos.TabIndex = 1;
+            this.btnBasicos.Text = "Modelos Basicos";
+            this.btnBasicos.UseVisualStyleBackColor = true;
             // 
             // Principal
             // 
@@ -173,6 +184,7 @@
         private System.Windows.Forms.OpenFileDialog AbrirArchivo;
         private System.Windows.Forms.TextBox txtPedido;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Button btnBasicos;
     }
 }
 
