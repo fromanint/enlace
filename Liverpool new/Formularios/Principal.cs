@@ -56,10 +56,7 @@ namespace Liverpool_new
 
         private void btnEtiVestidos_Click(object sender, EventArgs e)
         {
-                        List<string> modelos = new List<string> ();
-
-            /*     for (int i = 0; i < cmodelos.Items.Count; i++)
-                 { modelos.Add(cmodelos.Items[i].ToString()); }*/
+            List<string> modelos = new List<string> ();
             if (mc.Crear_Etiquetas())
             { MessageBox.Show("Archivos Creados"); }
             else
@@ -92,20 +89,23 @@ namespace Liverpool_new
         {
           
         }
-
+        //control para llenar la checklist de modelos
         void LlenarChecklistModelos()
         {
             List<Modelo> modelos = mc.EliminarRepetidos(false,true);
             cmodelos.Items.Clear();
+
+                cmodelos.Items.Add(modelos[0].ObtenerModelo());
+
             for (int i = 0; i < modelos.Count()-1; i++)
             {
                 if (!modelos[i + 1].Equals(modelos[i], false, false))
                 {
-                    cmodelos.Items.Add(modelos[i].ObtenerModelo());
+                    cmodelos.Items.Add(modelos[i+1].ObtenerModelo());
                 }
                 else
                 {
-                    cmodelos.Items.Add(modelos[i].ObtenerModelo() +  " " + modelos[i].ObtenerColor());
+                    cmodelos.Items.Add(modelos[i+1].ObtenerModelo() +  " " + modelos[i+1].ObtenerColorChar());
                 }    
             }       
             for (int i = 0; i < cmodelos.Items.Count; i++)

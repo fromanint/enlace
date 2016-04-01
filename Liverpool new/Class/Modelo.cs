@@ -16,16 +16,18 @@ namespace Liverpool_new.Class
         string sku;
         string precio;
 
-        
+
         public Modelo(string mod, string col, string tall, string fecha, string codigo, string pre)
         {
             modelo = mod;
             color = col;
             talla = tall;
-            fecha_embarque = fecha;
-            sku_barras = codigo.Insert(codigo.Length-1,"-");
+            sku_barras = codigo.Insert(codigo.Length - 1, "-");
             sku = codigo;
-            precio = pre;   
+            precio = pre;
+            fecha = fecha.Remove(6, 2);
+            fecha = fecha.Remove(0, 3);
+            fecha_embarque = fecha;
         }
         public Modelo()
         { }
@@ -47,16 +49,17 @@ namespace Liverpool_new.Class
             return string.Equals(modelo, other.modelo);
         }
 
-  
 
-     
+
+        public char ObtenerColorChar() { return color[0]; }
         public string ObtenerModelo() { return modelo; }
         public string ObtenerColor(){ return color; }
         public string ObtenerTalla() { return talla; }
-        public string ObtenerFecha_embarque() { return fecha_embarque; }
         public string ObtenerSku_barras() { return sku_barras; }
         public string ObtenerSku() { return sku; }
         public string ObtenerPrecio() { return precio;}
+        public string ObtenerFecha_embarque() { return fecha_embarque; }
+
 
     }
 

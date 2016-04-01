@@ -126,7 +126,7 @@ namespace Liverpool_new.Formularios
             pedido.Add(temporal);
         }
         void AgregarListaModelo(string mod, string col, string tall, string fecha, string codigo, string pre) {
-            if (tall.IndexOf("T") < 0 || tall.IndexOf("t") < 0)
+            if (tall.IndexOf("T") < 0 && tall.IndexOf("t") < 0)
             { tall += "T"; }
             if (tall == "3X" || tall == "3x")
             {
@@ -157,8 +157,8 @@ namespace Liverpool_new.Formularios
             {
                 foreach (Modelo mod in modelo)
                 {
-                    string path = ruta + "//" + mod.ObtenerModelo() + mod.ObtenerTalla()+mod.ObtenerColor()+ ".468" ;
-                        string archivo = PlantillaEtiquetas(mod);
+                    string path = ruta + "//" + mod.ObtenerModelo() + mod.ObtenerTalla() + mod.ObtenerColorChar() + ".468";
+                    string archivo = PlantillaEtiquetas(mod);
                     File.WriteAllText(path, archivo);
                        // StreamWriter file = new StreamWriter(path);
                         //file.WriteLine(archivo);
@@ -190,9 +190,9 @@ namespace Liverpool_new.Formularios
             archivo += "^PR3^FS" + Environment.NewLine;
             archivo += "^BY2,3.0" + Environment.NewLine;
             archivo += "^FS" + Environment.NewLine;
-            archivo += "^FT40,250^ABN,17,7^FDMod" + mod.ObtenerModelo() + "" + Environment.NewLine;
+            archivo += "^FT40,250^ABN,17,7^FDMod " + mod.ObtenerModelo() + "" + Environment.NewLine;
             archivo += "^FS" + Environment.NewLine;
-            archivo += "^FT160,250^ABN,17,7^FD" + mod.ObtenerModelo() + "" + Environment.NewLine;
+            archivo += "^FT160,250^ABN,17,7^FD" + mod.ObtenerColor() + "" + Environment.NewLine;
             archivo += "^FS" + Environment.NewLine;
             archivo += "^FT230,250^ABN,17,7^FD" + mod.ObtenerTalla() + "" + Environment.NewLine;
             archivo += "^FS" + Environment.NewLine;
@@ -221,13 +221,13 @@ namespace Liverpool_new.Formularios
         //Generales
         public List<Modelo> EliminarRepetidos(bool talla = false, bool color = false) {
             List<Modelo> filtro = new List<Modelo>();
-            
+            filtro.Add(modelo[0]);
             for(int i =0;i<modelo.Count()-1;i++)
                {
              
                 if (!modelo[i+1].Equals(modelo[i],talla,color))
                 {
-                    Modelo mod = modelo[i];
+                    Modelo mod = modelo[i+1];
                     filtro.Add(mod);
                 }   
             }
