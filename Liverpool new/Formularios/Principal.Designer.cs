@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.Operaciones = new System.Windows.Forms.GroupBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.cmodelos = new System.Windows.Forms.CheckedListBox();
             this.btnEmbarque = new System.Windows.Forms.Button();
             this.btnEtiVestidos = new System.Windows.Forms.Button();
             this.btnPedidoExcel = new System.Windows.Forms.Button();
             this.Administrar = new System.Windows.Forms.GroupBox();
+            this.btnBasicos = new System.Windows.Forms.Button();
             this.btnTienda = new System.Windows.Forms.Button();
             this.btnVersion = new System.Windows.Forms.Button();
             this.AbrirArchivo = new System.Windows.Forms.OpenFileDialog();
             this.txtPedido = new System.Windows.Forms.TextBox();
-            this.btnBasicos = new System.Windows.Forms.Button();
             this.Operaciones.SuspendLayout();
             this.Administrar.SuspendLayout();
             this.SuspendLayout();
             // 
             // Operaciones
             // 
-            this.Operaciones.Controls.Add(this.checkedListBox1);
+            this.Operaciones.Controls.Add(this.cmodelos);
             this.Operaciones.Controls.Add(this.btnEmbarque);
             this.Operaciones.Controls.Add(this.btnEtiVestidos);
             this.Operaciones.Controls.Add(this.btnPedidoExcel);
@@ -56,13 +56,13 @@
             this.Operaciones.TabStop = false;
             this.Operaciones.Text = "Operaciones";
             // 
-            // checkedListBox1
+            // cmodelos
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(403, 19);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(101, 154);
-            this.checkedListBox1.TabIndex = 4;
+            this.cmodelos.FormattingEnabled = true;
+            this.cmodelos.Location = new System.Drawing.Point(403, 19);
+            this.cmodelos.Name = "cmodelos";
+            this.cmodelos.Size = new System.Drawing.Size(101, 154);
+            this.cmodelos.TabIndex = 4;
             // 
             // btnEmbarque
             // 
@@ -105,6 +105,15 @@
             this.Administrar.TabStop = false;
             this.Administrar.Text = "Administrar";
             // 
+            // btnBasicos
+            // 
+            this.btnBasicos.Location = new System.Drawing.Point(41, 55);
+            this.btnBasicos.Name = "btnBasicos";
+            this.btnBasicos.Size = new System.Drawing.Size(116, 28);
+            this.btnBasicos.TabIndex = 1;
+            this.btnBasicos.Text = "Modelos Basicos";
+            this.btnBasicos.UseVisualStyleBackColor = true;
+            // 
             // btnTienda
             // 
             this.btnTienda.Location = new System.Drawing.Point(41, 19);
@@ -143,15 +152,6 @@
             this.txtPedido.Click += new System.EventHandler(this.txtPedido_Click);
             this.txtPedido.TextChanged += new System.EventHandler(this.txtPedido_TextChanged);
             // 
-            // btnBasicos
-            // 
-            this.btnBasicos.Location = new System.Drawing.Point(41, 55);
-            this.btnBasicos.Name = "btnBasicos";
-            this.btnBasicos.Size = new System.Drawing.Size(116, 28);
-            this.btnBasicos.TabIndex = 1;
-            this.btnBasicos.Text = "Modelos Basicos";
-            this.btnBasicos.UseVisualStyleBackColor = true;
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,7 +183,7 @@
         private System.Windows.Forms.Button btnVersion;
         private System.Windows.Forms.OpenFileDialog AbrirArchivo;
         private System.Windows.Forms.TextBox txtPedido;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox cmodelos;
         private System.Windows.Forms.Button btnBasicos;
     }
 }

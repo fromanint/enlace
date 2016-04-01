@@ -56,7 +56,7 @@ namespace Liverpool_new
 
         private void btnEtiVestidos_Click(object sender, EventArgs e)
         {
-            mc.Crear_Etiquetas();
+           
         }
 
 
@@ -70,6 +70,7 @@ namespace Liverpool_new
                 if (nopedido != "No es un archivo valido")
                 {
                     txtPedido.Text = nopedido;
+                    LlenarChecklistModelos();
                     Operaciones.Show();
                 }
                 else
@@ -82,6 +83,25 @@ namespace Liverpool_new
         private void txtPedido_TextChanged(object sender, EventArgs e)
         {
           
+        }
+
+        void LlenarChecklistModelos()
+        {
+            List<Modelo> modelos = mc.EliminarRepetidos(false,true);
+            cmodelos.Items.Clear();
+            for (int i = 0; i < modelos.Count()-1; i++)
+            {
+                if (!modelos[i + 1].Equals(modelos[i], false, false))
+                {
+                    cmodelos.Items.Add(modelos[i].ObtenerModelo());
+                }
+                else
+                {
+                    cmodelos.Items.Add(modelos[i].ObtenerModeloColor());
+                }
+                    
+            }
+            
         }
     }
 }

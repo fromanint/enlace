@@ -30,14 +30,21 @@ namespace Liverpool_new.Class
         public Modelo()
         { }
 
-        public bool Equals(Modelo other, bool tall)
+        public bool Equals(Modelo other, bool tall, bool col)
         {
-            if(!tall)
+            if (tall && col)
             {
-                return string.Equals(modelo, other.modelo);
+                return string.Equals(modelo, other.modelo) && string.Equals(color, other.color) && string.Equals(talla, other.talla);
             }
-            return string.Equals(modelo, other.modelo) && string.Equals(talla, other.talla);
+            if (tall)
+            {
+                return string.Equals(modelo, other.modelo) && string.Equals(talla, other.talla);
+            }
+            if (col){
+                return string.Equals(modelo, other.modelo) && string.Equals(color, other.color);
+            }
 
+            return string.Equals(modelo, other.modelo);
         }
 
         public string ObtenerModelo()
@@ -45,6 +52,10 @@ namespace Liverpool_new.Class
             return modelo;
         }
 
+        public string ObtenerModeloColor()
+        {
+            return modelo + " " + color;
+        }
 
     }
 

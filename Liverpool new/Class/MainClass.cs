@@ -83,12 +83,12 @@ namespace Liverpool_new.Formularios
 
             }
 
-            List<Modelo> ModNoRep = EliminarRepetidos() ;
+            List<Modelo> ModNoRep = EliminarRepetidos(true,true) ;
             modelo = ModNoRep;
             sr.Close();
             return Regresa_NoPedido();
         }
-
+        //Abrir archivo TXt
         string ArchivoTXT(string NombreArchivo) {
            StreamReader sr = new StreamReader(NombreArchivo);
             pedido.Clear();
@@ -118,7 +118,7 @@ namespace Liverpool_new.Formularios
             else
                 return "No es un archivo valido";
         }
-
+        //Hacer listas 
         void AgregarListaPedido(string no, int tie, int mod, string tall, int cant, string col) {
             string nopedido = no.Replace("  ", string.Empty);
             string talla = tall.Replace("T", string.Empty);
@@ -140,14 +140,14 @@ namespace Liverpool_new.Formularios
 
         }
         //Crear archivo de etiquetas Zebra M4
-        public void Crear_Etiquetas() {
-            string modelos = "Output//Etiquetas//";
-            foreach (Modelo mod in modelo)
+        public void Crear_Etiquetas(string[] modelos) {
+            string ruta = "Output//Etiquetas//";
+            foreach (String mod in modelos)
             {
-                modelos += mod.ObtenerModelo() + "-";
+                ruta += ruta + "-";
             }
-            modelos.Remove(modelos.Length-1);
-            CrearDirectorio(modelos);
+            ruta = ruta.Remove(ruta.Length-1);
+            CrearDirectorio(ruta);
         }
         //Crear archivo de etiquetas de embarque
         public void Crear_Etiquetas_Embarque()
@@ -155,13 +155,13 @@ namespace Liverpool_new.Formularios
         }
 
         //Generales
-        List<Modelo> EliminarRepetidos(bool talla = false) {
+        public List<Modelo> EliminarRepetidos(bool talla = false, bool color = false) {
             List<Modelo> filtro = new List<Modelo>();
             
             for(int i =0;i<modelo.Count()-1;i++)
                {
              
-                if (!modelo[i+1].Equals(modelo[i],talla))
+                if (!modelo[i+1].Equals(modelo[i],talla,color))
                 {
                     Modelo mod = modelo[i];
                     filtro.Add(mod);
