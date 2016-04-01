@@ -63,6 +63,7 @@
             this.cmodelos.Name = "cmodelos";
             this.cmodelos.Size = new System.Drawing.Size(101, 154);
             this.cmodelos.TabIndex = 4;
+            this.cmodelos.SelectedIndexChanged += new System.EventHandler(this.cmodelos_SelectedIndexChanged);
             // 
             // btnEmbarque
             // 

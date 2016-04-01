@@ -47,15 +47,16 @@ namespace Liverpool_new.Class
             return string.Equals(modelo, other.modelo);
         }
 
-        public string ObtenerModelo()
-        {
-            return modelo;
-        }
+  
 
-        public string ObtenerModeloColor()
-        {
-            return modelo + " " + color;
-        }
+     
+        public string ObtenerModelo() { return modelo; }
+        public string ObtenerColor(){ return color; }
+        public string ObtenerTalla() { return talla; }
+        public string ObtenerFecha_embarque() { return fecha_embarque; }
+        public string ObtenerSku_barras() { return sku_barras; }
+        public string ObtenerSku() { return sku; }
+        public string ObtenerPrecio() { return precio;}
 
     }
 

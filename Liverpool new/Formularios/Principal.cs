@@ -56,7 +56,15 @@ namespace Liverpool_new
 
         private void btnEtiVestidos_Click(object sender, EventArgs e)
         {
-           
+                        List<string> modelos = new List<string> ();
+
+            /*     for (int i = 0; i < cmodelos.Items.Count; i++)
+                 { modelos.Add(cmodelos.Items[i].ToString()); }*/
+            if (mc.Crear_Etiquetas())
+            { MessageBox.Show("Archivos Creados"); }
+            else
+            { MessageBox.Show("No se han podido crear los archivos"); }
+
         }
 
 
@@ -97,11 +105,17 @@ namespace Liverpool_new
                 }
                 else
                 {
-                    cmodelos.Items.Add(modelos[i].ObtenerModeloColor());
-                }
-                    
-            }
-            
+                    cmodelos.Items.Add(modelos[i].ObtenerModelo() +  " " + modelos[i].ObtenerColor());
+                }    
+            }       
+            for (int i = 0; i < cmodelos.Items.Count; i++)
+            { cmodelos.SetItemChecked(i, true); }
+
+        }
+
+        private void cmodelos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
