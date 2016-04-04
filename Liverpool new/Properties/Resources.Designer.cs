@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Liverpool_new.Properties
-{
-
-
+namespace Liverpool_new.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,49 +22,73 @@ namespace Liverpool_new.Properties
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Liverpool_new.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; standalone=&quot;yes&quot;?&gt;
+        ///&lt;ListaTiendas&gt;
+        ///  &lt;Tienda&gt;
+        ///    &lt;No_tienda&gt;1&lt;/No_tienda&gt;
+        ///    &lt;Tipo&gt;l&lt;/Tipo&gt;
+        ///    &lt;Nombre&gt;L CENTRO&lt;/Nombre&gt;
+        ///  &lt;/Tienda&gt;
+        ///  &lt;Tienda&gt;
+        ///    &lt;No_tienda&gt;2&lt;/No_tienda&gt;
+        ///    &lt;Tipo&gt;l&lt;/Tipo&gt;
+        ///    &lt;Nombre&gt;L INSURGENTES&lt;/Nombre&gt;
+        ///  &lt;/Tienda&gt;
+        ///  &lt;Tienda&gt;
+        ///    &lt;No_tienda&gt;3&lt;/No_tienda&gt;
+        ///    &lt;Tipo&gt;l&lt;/Tipo&gt;
+        ///    &lt;Nombre&gt;L POLANCO&lt;/Nombre&gt;
+        ///  &lt;/Tienda&gt;
+        ///  &lt;Tienda&gt;
+        ///    &lt;No_tienda&gt;4&lt;/No_tienda&gt;
+        ///    &lt;Tipo&gt;l&lt;/Tipo&gt;
+        ///    &lt;Nombre&gt;L SATELITE&lt;/Nombre&gt;
+        ///  &lt;/Tienda&gt;
+        ///  &lt;Tienda&gt;
+        ///    &lt;No_tien [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Listatiendas {
+            get {
+                return ResourceManager.GetString("Listatiendas", resourceCulture);
             }
         }
     }

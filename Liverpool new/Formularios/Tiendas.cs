@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Liverpool_new.Formularios
 {
-   
+
 
     public partial class Tiendas : Form
     {
@@ -34,13 +34,12 @@ namespace Liverpool_new.Formularios
                 tablatiendas.Columns[0].ReadOnly = true;
                 apunta = 0;
                 ImprimeResultado();
-
+                GInformacion.Enabled = false;
             }
             catch
             {
                 MessageBox.Show("No se ha podido cargar el archivo que contiene las tiendas");
                 Gcontrol.Hide();
-                GControles2.Hide();
             }
 
 
@@ -51,22 +50,15 @@ namespace Liverpool_new.Formularios
 
         }
 
-        private void AceptarCambio_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void CancelarNuevo_Click(object sender, EventArgs e)
-        {
-            GControles2.Hide();
-        }
 
         private void ImprimeResultado()
         {
             try
             {
                 txtNo_tienda.Text = tablatiendas.Rows[apunta][0].ToString();
-                txttipo.Text = tablatiendas.Rows[apunta][1].ToString();
+                CBTipo.Text = tablatiendas.Rows[apunta][1].ToString();
                 txtNombre.Text = tablatiendas.Rows[apunta][2].ToString();
                 if (apunta == 0)
                 {
@@ -90,7 +82,6 @@ namespace Liverpool_new.Formularios
             }
             catch
             {
-                // desactivabotones();
                 Nuevo.Visible = true;
             }
         }
@@ -98,7 +89,19 @@ namespace Liverpool_new.Formularios
         private void Nuevo_Click(object sender, EventArgs e)
         {
             GControles2.Show();
-           
+            GInformacion.Enabled = true;
+        }
+
+        private void Aceptar_Click(object sender, EventArgs e)
+        {
+            GControles2.Hide();
+            GInformacion.Enabled = false;
+        }
+
+        private void Cancelar_Click(object sender, EventArgs e)
+        {
+            GControles2.Hide();
+            GInformacion.Enabled = false;
         }
     }
 }

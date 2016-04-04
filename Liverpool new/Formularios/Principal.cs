@@ -39,14 +39,14 @@ namespace Liverpool_new
         {
             Tiendas frm = new Tiendas();
             frm.Show();
-            Hide();
+            
         }
 
         private void btnEmbarque_Click(object sender, EventArgs e)
         {
             Eti_Cajas frm = new Eti_Cajas();
             frm.Show();
-            Hide();
+       
         }
 
         private void btnPedidoExcel_Click(object sender, EventArgs e)

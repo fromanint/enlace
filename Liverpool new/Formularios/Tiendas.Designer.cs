@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CancelarNuevo = new System.Windows.Forms.Button();
+            this.Cancelar = new System.Windows.Forms.Button();
             this.Eliminar_todo = new System.Windows.Forms.Button();
-            this.AceptarCambio = new System.Windows.Forms.Button();
+            this.Aceptar = new System.Windows.Forms.Button();
             this.Modificar = new System.Windows.Forms.Button();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.Eliminar = new System.Windows.Forms.Button();
             this.Guardar = new System.Windows.Forms.Button();
             this.Nuevo = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txttipo = new System.Windows.Forms.TextBox();
             this.txtNo_tienda = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.Anterior = new System.Windows.Forms.Button();
             this.Primero = new System.Windows.Forms.Button();
             this.GInformacion = new System.Windows.Forms.GroupBox();
+            this.CBTipo = new System.Windows.Forms.ComboBox();
             this.GAcciones = new System.Windows.Forms.GroupBox();
             this.btnImportar = new System.Windows.Forms.Button();
             this.Gcontrol = new System.Windows.Forms.GroupBox();
@@ -61,15 +61,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ListaTiendas)).BeginInit();
             this.SuspendLayout();
             // 
-            // CancelarNuevo
+            // Cancelar
             // 
-            this.CancelarNuevo.Location = new System.Drawing.Point(426, 16);
-            this.CancelarNuevo.Name = "CancelarNuevo";
-            this.CancelarNuevo.Size = new System.Drawing.Size(75, 23);
-            this.CancelarNuevo.TabIndex = 44;
-            this.CancelarNuevo.Text = "Cancelar";
-            this.CancelarNuevo.UseVisualStyleBackColor = true;
-            this.CancelarNuevo.Click += new System.EventHandler(this.CancelarNuevo_Click);
+            this.Cancelar.Location = new System.Drawing.Point(426, 16);
+            this.Cancelar.Name = "Cancelar";
+            this.Cancelar.Size = new System.Drawing.Size(75, 23);
+            this.Cancelar.TabIndex = 44;
+            this.Cancelar.Text = "Cancelar";
+            this.Cancelar.UseVisualStyleBackColor = true;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // Eliminar_todo
             // 
@@ -80,15 +80,15 @@
             this.Eliminar_todo.Text = "Eliminar todo";
             this.Eliminar_todo.UseVisualStyleBackColor = true;
             // 
-            // AceptarCambio
+            // Aceptar
             // 
-            this.AceptarCambio.Location = new System.Drawing.Point(344, 16);
-            this.AceptarCambio.Name = "AceptarCambio";
-            this.AceptarCambio.Size = new System.Drawing.Size(75, 23);
-            this.AceptarCambio.TabIndex = 41;
-            this.AceptarCambio.Text = "Aceptar";
-            this.AceptarCambio.UseVisualStyleBackColor = true;
-            this.AceptarCambio.Click += new System.EventHandler(this.AceptarCambio_Click);
+            this.Aceptar.Location = new System.Drawing.Point(344, 16);
+            this.Aceptar.Name = "Aceptar";
+            this.Aceptar.Size = new System.Drawing.Size(75, 23);
+            this.Aceptar.TabIndex = 41;
+            this.Aceptar.Text = "Aceptar";
+            this.Aceptar.UseVisualStyleBackColor = true;
+            this.Aceptar.Click += new System.EventHandler(this.Aceptar_Click);
             // 
             // Modificar
             // 
@@ -137,24 +137,13 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(217, 37);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(264, 20);
             this.txtNombre.TabIndex = 34;
             // 
-            // txttipo
-            // 
-            this.txttipo.Enabled = false;
-            this.txttipo.Location = new System.Drawing.Point(143, 37);
-            this.txttipo.MaxLength = 1;
-            this.txttipo.Name = "txttipo";
-            this.txttipo.Size = new System.Drawing.Size(44, 20);
-            this.txttipo.TabIndex = 33;
-            // 
             // txtNo_tienda
             // 
-            this.txtNo_tienda.Enabled = false;
             this.txtNo_tienda.Location = new System.Drawing.Point(16, 37);
             this.txtNo_tienda.MaxLength = 10;
             this.txtNo_tienda.Name = "txtNo_tienda";
@@ -173,7 +162,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(143, 22);
+            this.label2.Location = new System.Drawing.Point(143, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 13);
             this.label2.TabIndex = 24;
@@ -234,9 +223,9 @@
             // 
             // GInformacion
             // 
+            this.GInformacion.Controls.Add(this.CBTipo);
             this.GInformacion.Controls.Add(this.txtNo_tienda);
             this.GInformacion.Controls.Add(this.label1);
-            this.GInformacion.Controls.Add(this.txttipo);
             this.GInformacion.Controls.Add(this.label2);
             this.GInformacion.Controls.Add(this.label3);
             this.GInformacion.Controls.Add(this.txtNombre);
@@ -246,6 +235,17 @@
             this.GInformacion.TabIndex = 46;
             this.GInformacion.TabStop = false;
             this.GInformacion.Text = "Infromación";
+            // 
+            // CBTipo
+            // 
+            this.CBTipo.FormattingEnabled = true;
+            this.CBTipo.Items.AddRange(new object[] {
+            "l",
+            "f"});
+            this.CBTipo.Location = new System.Drawing.Point(126, 36);
+            this.CBTipo.Name = "CBTipo";
+            this.CBTipo.Size = new System.Drawing.Size(62, 21);
+            this.CBTipo.TabIndex = 35;
             // 
             // GAcciones
             // 
@@ -298,8 +298,8 @@
             // 
             // GControles2
             // 
-            this.GControles2.Controls.Add(this.AceptarCambio);
-            this.GControles2.Controls.Add(this.CancelarNuevo);
+            this.GControles2.Controls.Add(this.Aceptar);
+            this.GControles2.Controls.Add(this.Cancelar);
             this.GControles2.Location = new System.Drawing.Point(41, 127);
             this.GControles2.Name = "GControles2";
             this.GControles2.Size = new System.Drawing.Size(512, 122);
@@ -339,16 +339,15 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button CancelarNuevo;
+        private System.Windows.Forms.Button Cancelar;
         private System.Windows.Forms.Button Eliminar_todo;
-        private System.Windows.Forms.Button AceptarCambio;
+        private System.Windows.Forms.Button Aceptar;
         private System.Windows.Forms.Button Modificar;
         private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.Button Eliminar;
         private System.Windows.Forms.Button Guardar;
         private System.Windows.Forms.Button Nuevo;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txttipo;
         private System.Windows.Forms.TextBox txtNo_tienda;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -365,5 +364,6 @@
         private System.Windows.Forms.Label lblBuscar;
         private System.Data.DataSet ListaTiendas;
         private System.Windows.Forms.Button btnImportar;
+        private System.Windows.Forms.ComboBox CBTipo;
     }
 }
