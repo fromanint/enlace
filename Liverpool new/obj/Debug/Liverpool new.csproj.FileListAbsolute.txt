@@ -15,3 +15,20 @@ C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool
 C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool new\bin\Debug\Resources\PlantillaEtiqutas\plantilla.468
 C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool new\bin\Debug\Resources\PlantillaEtiqutas\X2FH2F.ETQ
 C:\Users\YO\Documents\Visual Studio 2015\Projects\Liverpool new\enlace\Liverpool new\bin\Debug\Resources\Listatiendas.xml
+D:\Proyectos\enlace\Liverpool new\bin\Debug\Liverpool new.exe.config
+D:\Proyectos\enlace\Liverpool new\obj\Debug\Liverpool new.exe
+D:\Proyectos\enlace\Liverpool new\obj\Debug\Liverpool new.pdb
+D:\Proyectos\enlace\Liverpool new\obj\Debug\Liverpool new.csprojResolveAssemblyReference.cache
+D:\Proyectos\enlace\Liverpool new\obj\Debug\Liverpool_new.Formularios.About.resources
+D:\Proyectos\enlace\Liverpool new\obj\Debug\Liverpool_new.Formularios.Eti_Cajas.resources
+D:\Proyectos\enlace\Liverpool new\obj\Debug\Liverpool_new.Principal.resources
+D:\Proyectos\enlace\Liverpool new\obj\Debug\Liverpool_new.Formularios.Tiendas.resources
+D:\Proyectos\enlace\Liverpool new\obj\Debug\Liverpool_new.Properties.Resources.resources
+D:\Proyectos\enlace\Liverpool new\obj\Debug\Liverpool new.csproj.GenerateResource.Cache
+D:\Proyectos\enlace\Liverpool new\bin\Debug\Resources\PlantillaEtiqutas\ZDARC.EXE
+D:\Proyectos\enlace\Liverpool new\bin\Debug\Resources\PlantillaEtiqutas\63217328.LSF
+D:\Proyectos\enlace\Liverpool new\bin\Debug\Resources\PlantillaEtiqutas\plantilla.468
+D:\Proyectos\enlace\Liverpool new\bin\Debug\Resources\PlantillaEtiqutas\X2FH2F.ETQ
+D:\Proyectos\enlace\Liverpool new\bin\Debug\Resources\Listatiendas.xml
+D:\Proyectos\enlace\Liverpool new\bin\Debug\Liverpool new.exe
+D:\Proyectos\enlace\Liverpool new\bin\Debug\Liverpool new.pdb

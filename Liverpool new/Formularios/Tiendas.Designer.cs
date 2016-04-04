@@ -43,7 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblregistro = new System.Windows.Forms.Label();
             this.Ultimo = new System.Windows.Forms.Button();
-            this.siguiente = new System.Windows.Forms.Button();
+            this.Siguiente = new System.Windows.Forms.Button();
             this.Anterior = new System.Windows.Forms.Button();
             this.Primero = new System.Windows.Forms.Button();
             this.GInformacion = new System.Windows.Forms.GroupBox();
@@ -54,6 +54,7 @@
             this.lblBuscar = new System.Windows.Forms.Label();
             this.GControles2 = new System.Windows.Forms.GroupBox();
             this.ListaTiendas = new System.Data.DataSet();
+            this.lblReg = new System.Windows.Forms.Label();
             this.GInformacion.SuspendLayout();
             this.GAcciones.SuspendLayout();
             this.Gcontrol.SuspendLayout();
@@ -79,6 +80,7 @@
             this.Eliminar_todo.TabIndex = 43;
             this.Eliminar_todo.Text = "Eliminar todo";
             this.Eliminar_todo.UseVisualStyleBackColor = true;
+            this.Eliminar_todo.Click += new System.EventHandler(this.Eliminar_todo_Click);
             // 
             // Aceptar
             // 
@@ -98,6 +100,7 @@
             this.Modificar.TabIndex = 40;
             this.Modificar.Text = "Modificar";
             this.Modificar.UseVisualStyleBackColor = true;
+            this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
             // 
             // txtbuscar
             // 
@@ -106,6 +109,7 @@
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(71, 20);
             this.txtbuscar.TabIndex = 39;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
             // Eliminar
             // 
@@ -115,6 +119,7 @@
             this.Eliminar.TabIndex = 37;
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseVisualStyleBackColor = true;
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // Guardar
             // 
@@ -124,6 +129,7 @@
             this.Guardar.TabIndex = 36;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = true;
+            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
             // Nuevo
             // 
@@ -193,15 +199,17 @@
             this.Ultimo.TabIndex = 28;
             this.Ultimo.Text = ">>";
             this.Ultimo.UseVisualStyleBackColor = true;
+            this.Ultimo.Click += new System.EventHandler(this.Ultimo_Click);
             // 
-            // siguiente
+            // Siguiente
             // 
-            this.siguiente.Location = new System.Drawing.Point(344, 57);
-            this.siguiente.Name = "siguiente";
-            this.siguiente.Size = new System.Drawing.Size(75, 23);
-            this.siguiente.TabIndex = 27;
-            this.siguiente.Text = ">";
-            this.siguiente.UseVisualStyleBackColor = true;
+            this.Siguiente.Location = new System.Drawing.Point(344, 57);
+            this.Siguiente.Name = "Siguiente";
+            this.Siguiente.Size = new System.Drawing.Size(75, 23);
+            this.Siguiente.TabIndex = 27;
+            this.Siguiente.Text = ">";
+            this.Siguiente.UseVisualStyleBackColor = true;
+            this.Siguiente.Click += new System.EventHandler(this.Siguiente_Click);
             // 
             // Anterior
             // 
@@ -211,6 +219,7 @@
             this.Anterior.TabIndex = 26;
             this.Anterior.Text = "<";
             this.Anterior.UseVisualStyleBackColor = true;
+            this.Anterior.Click += new System.EventHandler(this.Anterior_Click);
             // 
             // Primero
             // 
@@ -220,9 +229,11 @@
             this.Primero.TabIndex = 25;
             this.Primero.Text = "<<";
             this.Primero.UseVisualStyleBackColor = true;
+            this.Primero.Click += new System.EventHandler(this.Primero_Click);
             // 
             // GInformacion
             // 
+            this.GInformacion.Controls.Add(this.lblReg);
             this.GInformacion.Controls.Add(this.CBTipo);
             this.GInformacion.Controls.Add(this.txtNo_tienda);
             this.GInformacion.Controls.Add(this.label1);
@@ -276,7 +287,7 @@
             // 
             this.Gcontrol.Controls.Add(this.lblBuscar);
             this.Gcontrol.Controls.Add(this.Anterior);
-            this.Gcontrol.Controls.Add(this.siguiente);
+            this.Gcontrol.Controls.Add(this.Siguiente);
             this.Gcontrol.Controls.Add(this.Ultimo);
             this.Gcontrol.Controls.Add(this.Primero);
             this.Gcontrol.Controls.Add(this.txtbuscar);
@@ -312,6 +323,15 @@
             // 
             this.ListaTiendas.DataSetName = "ListaTiendas";
             // 
+            // lblReg
+            // 
+            this.lblReg.AutoSize = true;
+            this.lblReg.Location = new System.Drawing.Point(432, 89);
+            this.lblReg.Name = "lblReg";
+            this.lblReg.Size = new System.Drawing.Size(74, 13);
+            this.lblReg.TabIndex = 36;
+            this.lblReg.Text = "XXX de XXXX";
+            // 
             // Tiendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,6 +355,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ListaTiendas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tiendas_FormClosing);
+
 
         }
 
@@ -354,7 +376,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblregistro;
         private System.Windows.Forms.Button Ultimo;
-        private System.Windows.Forms.Button siguiente;
+        private System.Windows.Forms.Button Siguiente;
         private System.Windows.Forms.Button Anterior;
         private System.Windows.Forms.Button Primero;
         private System.Windows.Forms.GroupBox GInformacion;
@@ -365,5 +387,6 @@
         private System.Data.DataSet ListaTiendas;
         private System.Windows.Forms.Button btnImportar;
         private System.Windows.Forms.ComboBox CBTipo;
+        private System.Windows.Forms.Label lblReg;
     }
 }
