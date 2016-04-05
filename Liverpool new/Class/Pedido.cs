@@ -30,6 +30,21 @@ namespace Liverpool_new.Class
             return nopedido;
         }
 
+        public int ObtenerTienda()
+        {
+            return tienda;
+        }
+
+        public bool Equals(Pedido other,  bool tien)
+        {
+            if (tien)
+            {
+                return tienda == other.tienda;
+            }
+
+
+            return string.Equals(nopedido, other.nopedido);
+        }
 
 
     }

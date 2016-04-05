@@ -42,6 +42,28 @@ namespace Liverpool_new.Class
             return tablatiendas.Rows[index][2].ToString();
         }
 
+
+        public string ObtenerNumero(string buscar)
+        {
+            int index = Buscar(buscar);
+            return tablatiendas.Rows[index][0].ToString();
+        }
+
+        public string ObtenerTipo(string buscar)
+        {
+            int index = Buscar(buscar);
+            return tablatiendas.Rows[index][1].ToString();
+        }
+
+        public string ObtenerNombre(string buscar)
+        {
+            int index = Buscar(buscar);
+            if (index != -1)
+                return tablatiendas.Rows[index][2].ToString();
+            else
+                return "No se ha encontrado la tienda";
+        }
+
         public int TotalTiendas()
         {
             return tablatiendas.Rows.Count;
@@ -116,6 +138,7 @@ namespace Liverpool_new.Class
             return -1;
         }
 
+ 
         public string Guardar() {
             try
             {

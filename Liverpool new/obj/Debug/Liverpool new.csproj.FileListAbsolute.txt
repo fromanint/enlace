@@ -32,3 +32,6 @@ D:\Proyectos\enlace\Liverpool new\bin\Debug\Resources\PlantillaEtiqutas\X2FH2F.E
 D:\Proyectos\enlace\Liverpool new\bin\Debug\Resources\Listatiendas.xml
 D:\Proyectos\enlace\Liverpool new\bin\Debug\Liverpool new.exe
 D:\Proyectos\enlace\Liverpool new\bin\Debug\Liverpool new.pdb
+D:\Proyectos\enlace\Liverpool new\bin\Debug\Resources\Plantillas\PLANTILLA1.dotx
+D:\Proyectos\enlace\Liverpool new\bin\Debug\Resources\Plantillas\PLANTILLA2.dotx
+D:\Proyectos\enlace\Liverpool new\obj\Debug\Liverpool new.csproj.ResolveComReference.cache

@@ -14,7 +14,7 @@ namespace Liverpool_new
 {
     public partial class Principal : Form
     {
-        public MainClass mc = new MainClass();
+        public static MainClass mc = new MainClass();
 
 
         public Principal()

@@ -218,7 +218,7 @@ namespace Liverpool_new.Formularios
         {
         }
 
-        //Generales
+        //Filtros
         public List<Modelo> EliminarRepetidos(bool talla = false, bool color = false) {
             List<Modelo> filtro = new List<Modelo>();
             filtro.Add(modelo[0]);
@@ -233,6 +233,27 @@ namespace Liverpool_new.Formularios
             }
             return filtro;
         }
+        public List<Pedido> EliminarRepetidos(bool tienda = false) {
+            List<Pedido> filtro = new List<Pedido>();
+            filtro.Add(pedido[0]);
+            for (int i = 0; i < pedido.Count() - 1; i++)
+            {
+
+                if (!pedido[i + 1].Equals(pedido[i], tienda))
+                {
+                    Pedido ped = pedido[i + 1];
+                    filtro.Add(ped);
+                }
+            }
+            return filtro;
+        }
+
+        public List<Pedido> Ordenar(bool Repetidos) {
+            List<Pedido> SortedList = pedido.OrderBy(o => o.ObtenerTienda()).ToList();
+            
+            return SortedList;
+        }
+
 
 
 
