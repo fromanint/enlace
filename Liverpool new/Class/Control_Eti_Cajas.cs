@@ -40,10 +40,11 @@ namespace Liverpool_new.Class
             if (msg == "")
             {
                 msg = CrearDocumento(pedido, fecha,non, repeticiones);
-            }
-            if (msg == "")
-            {
-                msg = GuardarDocumento(pedido);
+            
+                if (msg == "")
+                {
+                    msg = GuardarDocumento(pedido);
+                }
             }
             return msg;
         }
@@ -144,7 +145,7 @@ namespace Liverpool_new.Class
                 return "Archivo Guardado en: " + path + ".docx";
             }
             catch { return ("No se ha podido guardar el archivo presione enter y elija otro nombre"); }
-            ;
+            
         }
         void BuscarReemplazar(string buscar, string encontrado)
         {

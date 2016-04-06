@@ -135,10 +135,6 @@ namespace Liverpool_new.Class
             Modelo temporal = new Modelo(mod, col, tall, fecha, codigo, pre);
             modelo.Add(temporal);
         }
-        //Crear hoja de excel
-        public void Crear_Pedido() {
-
-        }
         //Crear archivo de etiquetas Zebra M4
         public bool Crear_Etiquetas() {
             string ruta = "Output//Etiquetas//";
@@ -213,9 +209,12 @@ namespace Liverpool_new.Class
 
             return archivo;
         }
-        //Crear archivo de etiquetas de embarque
-        public void Crear_Etiquetas_Embarque()
+        //Crear Hoja de excel para pedidos
+        public string CrearPedidoExcel()
         {
+            HojaPedidoExcel hpe = new HojaPedidoExcel();
+            string msg = hpe.Iniciar(OrdenarPedidoTienda(),OrdenarListaModelo());
+            return msg;
         }
 
         //Filtros
@@ -248,12 +247,25 @@ namespace Liverpool_new.Class
             return filtro;
         }
 
-        public List<Pedido> Ordenar(bool Repetidos) {
-            List<Pedido> SortedList = pedido.OrderBy(o => o.ObtenerTienda()).ToList();
-            
+        //Ordenamientos
+        public List<Pedido> OrdenarListaPedido() {
+            List<Pedido> SortedList = pedido.OrderBy(o => o.GetNoPedido()).ToList();
+            return SortedList;
+        } 
+        public List<Pedido> OrdenarPedidoTienda() {
+            List<Pedido> SortedList = pedido.OrderBy(o => o.ObtenerTienda()).ToList();            
             return SortedList;
         }
-
+        public List<Modelo> OrdenarListaModelo()
+        {
+            List<Modelo> SortedList = modelo.OrderBy(o => o.ObtenerModelo()).ThenBy(o => o.ObtenerTalla()).ThenBy(o=>o.ObtenerColor()).ToList();
+            return SortedList;
+        }
+        public List<Modelo> OrdenEspecialModelo()
+        {
+            List<Modelo> SortedList = modelo.OrderBy(o => o.ObtenerModelo()).ThenBy(o => o.ObtenerColor()).ToList();
+            return SortedList;
+        }
 
 
 

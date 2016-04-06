@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Class\ControlTiendas.cs" />
     <Compile Include="Class\Control_Eti_Cajas.cs" />
+    <Compile Include="Class\HojaPedidoExcel.cs" />
     <Compile Include="Class\Modelo.cs" />
     <Compile Include="Class\Pedido.cs" />
     <Compile Include="Formularios\About.cs">

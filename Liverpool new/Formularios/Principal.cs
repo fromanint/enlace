@@ -51,7 +51,8 @@ namespace Liverpool_new
 
         private void btnPedidoExcel_Click(object sender, EventArgs e)
         {
-            mc.Crear_Pedido();
+            string msg = mc.CrearPedidoExcel();
+            MessageBox.Show(msg);
         }
 
         private void btnEtiVestidos_Click(object sender, EventArgs e)
