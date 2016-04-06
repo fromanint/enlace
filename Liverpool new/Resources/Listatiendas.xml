@@ -151,6 +151,11 @@
     <Nombre>INTERNET</Nombre>
   </Tienda>
   <Tienda>
+    <No_tienda>40</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>Foro Fotográfico</Nombre>
+  </Tienda>
+  <Tienda>
     <No_tienda>41</No_tienda>
     <Tipo>l</Tipo>
     <Nombre>L TAMPICO</Nombre>
@@ -366,6 +371,11 @@
     <Nombre>CD TULTITLAN</Nombre>
   </Tienda>
   <Tienda>
+    <No_tienda>102</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>LIV. CAMPECHE</Nombre>
+  </Tienda>
+  <Tienda>
     <No_tienda>103</No_tienda>
     <Tipo>l</Tipo>
     <Nombre>L INTERLOMAS</Nombre>
@@ -381,6 +391,11 @@
     <Nombre>L CELAYA</Nombre>
   </Tienda>
   <Tienda>
+    <No_tienda>106</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. PUEBLA CERDAN</Nombre>
+  </Tienda>
+  <Tienda>
     <No_tienda>110</No_tienda>
     <Tipo>l</Tipo>
     <Nombre>L CD JUAREZ</Nombre>
@@ -389,6 +404,11 @@
     <No_tienda>113</No_tienda>
     <Tipo>l</Tipo>
     <Nombre>L MTY CUMBRES</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>117</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. MAZATLAN</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>121</No_tienda>
@@ -411,9 +431,89 @@
     <Nombre>L VILLAHERMOSA ALTABRISA</Nombre>
   </Tienda>
   <Tienda>
+    <No_tienda>135</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. GUAD. OBLATOS</Nombre>
+  </Tienda>
+  <Tienda>
     <No_tienda>136</No_tienda>
     <Tipo>l</Tipo>
     <Nombre>L SAN LUIS</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>140</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. TOLUCA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>165</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. VERACRUZ  DORADO</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>166</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. LEON ARENA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>169</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. TUXPAN</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>170</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. CD. JARDIN</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>173</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. QUERETARON ANTEA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>180</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. COACALCO</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>182</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>F. PLAZA CENTRAL</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>183</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>F. LAGO GUADALUPE</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>186</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. TLANEPANTLA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>188</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>F. CHIMALHUACAN</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>192</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>F. CUAUTLA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>194</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>F. SALAMANCA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>196</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>F. ZUMPANGO</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>197</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>F. TEXCOCO</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>300</No_tienda>
@@ -431,6 +531,11 @@
     <Nombre>L CHILPANCINGO</Nombre>
   </Tienda>
   <Tienda>
+    <No_tienda>304</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>CD DEL CARMEN</Nombre>
+  </Tienda>
+  <Tienda>
     <No_tienda>305</No_tienda>
     <Tipo>l</Tipo>
     <Nombre>L LOS MOCHIS</Nombre>
@@ -441,8 +546,28 @@
     <Nombre>L ACAPULCO</Nombre>
   </Tienda>
   <Tienda>
+    <No_tienda>307</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>LIV. PLAYA DEL CARMEN</Nombre>
+  </Tienda>
+  <Tienda>
     <No_tienda>308</No_tienda>
     <Tipo>l</Tipo>
     <Nombre>L LA PAZ</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>310</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>LIV. SALINA CRUZ</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>311</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>SAN JUAN DEL RIO</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>312</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. MEXICALI</Nombre>
   </Tienda>
 </ListaTiendas>

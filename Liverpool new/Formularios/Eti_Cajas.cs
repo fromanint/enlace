@@ -61,7 +61,7 @@ namespace Liverpool_new.Formularios
                   //  listaTiendas.Add(int.Parse(ListaTiendas.SelectedValue.ToString()));
                 }
             }
-            string msg = cec.Crear_Etiquetas_Embarque(listaTiendas, Principal.mc.pedido[0].GetNoPedido());
+            string msg = cec.Crear_Etiquetas_Embarque(listaTiendas, Principal.mc.pedido[0].GetNoPedido(),fechaa.Value.ToString("dd-MM-yy"));
             MessageBox.Show(msg);
         }
     }

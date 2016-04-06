@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Liverpool_new.Class;
 
-namespace Liverpool_new.Formularios
+
+namespace Liverpool_new.Class
 {
     public class MainClass
     {
