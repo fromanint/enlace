@@ -121,7 +121,7 @@ namespace Liverpool_new.Class
         //Hacer listas 
         void AgregarListaPedido(string no, int tie, int mod, string tall, int cant, string col) {
             string nopedido = no.Replace("  ", string.Empty);
-            string talla = tall.Replace("T", string.Empty);
+            string talla = tall;
             Pedido temporal = new Pedido(nopedido, tie, mod, talla, cant, col);
             pedido.Add(temporal);
         }

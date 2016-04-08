@@ -26,23 +26,19 @@ namespace Liverpool_new.Class
             color = col;
         }
 
-        public string GetNoPedido() {
-            return nopedido;
-        }
-
-        public int ObtenerTienda()
-        {
-            return tienda;
-        }
+        public string GetNoPedido() {return nopedido;}
+        public int ObtenerTienda() { return tienda; }
+        public char ObtenerColorChar() { return color[0]; }
+        public string ObtenerModelo() { return modelo.ToString(); }
+        public string ObtenerTalla() { return talla; }
+        public int ObtenerCantidad() { return cantidad; }
 
         public bool Equals(Pedido other,  bool tien)
         {
             if (tien)
             {
-                return tienda == other.tienda;
+                return tienda == other.tienda && string.Equals(nopedido, other.nopedido);
             }
-
-
             return string.Equals(nopedido, other.nopedido);
         }
 
