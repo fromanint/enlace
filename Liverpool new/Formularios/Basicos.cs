@@ -38,6 +38,7 @@ namespace Liverpool_new.Formularios
         {
             cb.Iniciar(dtBasicos);
             ImprimirResultado();
+            lbModelos.SetSelected(0, true);
         }
 
         private void Nuevo_Click(object sender, EventArgs e)
@@ -70,6 +71,9 @@ namespace Liverpool_new.Formularios
             }
             else
             {
+                int selectedIndex = lbModelos.SelectedIndex;
+                cb.Modificar(txtModelo.Text, txtColor.Text, selectedIndex);
+                ImprimirResultado();
                 //ct.Modificar(txtNo_tienda.Text, CBTipo.Text, txtNombre.Text, index);
                 //txtNo_tienda.Enabled = false;
             }
@@ -127,6 +131,16 @@ namespace Liverpool_new.Formularios
 
             }
             
+        }
+
+        private void Modificar_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = lbModelos.SelectedIndex;
+            gbPonerInfo.Show();
+            txtModelo.Text = modelos[selectedIndex].ObtenerModelo();
+            txtColor.Text = modelos[selectedIndex].ObtenerColor();
+            index = selectedIndex;
+
         }
     }
 }

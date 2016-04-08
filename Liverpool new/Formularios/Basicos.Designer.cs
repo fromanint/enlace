@@ -33,6 +33,7 @@
             this.Subir = new System.Windows.Forms.Button();
             this.Nuevo = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
+            this.Modificar = new System.Windows.Forms.Button();
             this.Eliminar_todo = new System.Windows.Forms.Button();
             this.Guardar = new System.Windows.Forms.Button();
             this.GInformacion = new System.Windows.Forms.GroupBox();
@@ -40,13 +41,12 @@
             this.lblregistro = new System.Windows.Forms.Label();
             this.dtBasicos = new System.Data.DataSet();
             this.gbPonerInfo = new System.Windows.Forms.GroupBox();
-            this.lblModelo = new System.Windows.Forms.Label();
-            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.txtColor = new System.Windows.Forms.TextBox();
             this.lblColor = new System.Windows.Forms.Label();
-            this.Modificar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.lblModelo = new System.Windows.Forms.Label();
             this.GAcciones.SuspendLayout();
             this.GInformacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtBasicos)).BeginInit();
@@ -108,6 +108,16 @@
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseVisualStyleBackColor = true;
             this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
+            // 
+            // Modificar
+            // 
+            this.Modificar.Location = new System.Drawing.Point(33, 79);
+            this.Modificar.Name = "Modificar";
+            this.Modificar.Size = new System.Drawing.Size(75, 23);
+            this.Modificar.TabIndex = 40;
+            this.Modificar.Text = "Modificar";
+            this.Modificar.UseVisualStyleBackColor = true;
+            this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
             // 
             // Eliminar_todo
             // 
@@ -175,21 +185,25 @@
             this.gbPonerInfo.Text = "Infromación";
             this.gbPonerInfo.Visible = false;
             // 
-            // lblModelo
+            // btnCancelar
             // 
-            this.lblModelo.AutoSize = true;
-            this.lblModelo.Location = new System.Drawing.Point(6, 58);
-            this.lblModelo.Name = "lblModelo";
-            this.lblModelo.Size = new System.Drawing.Size(45, 13);
-            this.lblModelo.TabIndex = 0;
-            this.lblModelo.Text = "Modelo:";
+            this.btnCancelar.Location = new System.Drawing.Point(98, 146);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(64, 23);
+            this.btnCancelar.TabIndex = 47;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // txtModelo
+            // btnAceptar
             // 
-            this.txtModelo.Location = new System.Drawing.Point(57, 55);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(105, 20);
-            this.txtModelo.TabIndex = 1;
+            this.btnAceptar.Location = new System.Drawing.Point(9, 146);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(64, 23);
+            this.btnAceptar.TabIndex = 46;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txtColor
             // 
@@ -207,34 +221,21 @@
             this.lblColor.TabIndex = 2;
             this.lblColor.Text = "Color:";
             // 
-            // Modificar
+            // txtModelo
             // 
-            this.Modificar.Location = new System.Drawing.Point(33, 79);
-            this.Modificar.Name = "Modificar";
-            this.Modificar.Size = new System.Drawing.Size(75, 23);
-            this.Modificar.TabIndex = 40;
-            this.Modificar.Text = "Modificar";
-            this.Modificar.UseVisualStyleBackColor = true;
+            this.txtModelo.Location = new System.Drawing.Point(57, 55);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(105, 20);
+            this.txtModelo.TabIndex = 1;
             // 
-            // btnAceptar
+            // lblModelo
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(9, 146);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(64, 23);
-            this.btnAceptar.TabIndex = 46;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(98, 146);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(64, 23);
-            this.btnCancelar.TabIndex = 47;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.lblModelo.AutoSize = true;
+            this.lblModelo.Location = new System.Drawing.Point(6, 58);
+            this.lblModelo.Name = "lblModelo";
+            this.lblModelo.Size = new System.Drawing.Size(45, 13);
+            this.lblModelo.TabIndex = 0;
+            this.lblModelo.Text = "Modelo:";
             // 
             // Basicos
             // 

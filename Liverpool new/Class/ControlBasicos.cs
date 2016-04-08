@@ -90,7 +90,19 @@ namespace Liverpool_new.Class
             }
         }
 
-        
+        public string Modificar(string modelo, string color, int index)
+        {
+            if (VerificarDatos(modelo, color))
+            {
+                tablaBasicos.Rows[index][1] = modelo;
+                tablaBasicos.Rows[index][2] = color;
+                return "";
+            }
+            else
+            {
+                return "No se han insertado todos los datos";
+            }
+        }
 
         public string Nuevo(string modelo, string color)
         {
