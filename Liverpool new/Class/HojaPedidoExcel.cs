@@ -129,7 +129,7 @@ namespace Liverpool_new.Class
                 i--;
                 
                 encabezado.Add(j, Tuple.Create(modelo[i].ObtenerModelo() + modelo[i].ObtenerColorChar(),""));
-                ColumnaNegra.Add(j-1);
+                ColumnaNegra.Add(j);
                 
             }
             encabezado.Add(j, Tuple.Create("Total", ""));
@@ -165,7 +165,7 @@ namespace Liverpool_new.Class
                 {
                     RenglonColor.Add(no_renglon);
                 }
-                RenglonColor.Add(no_renglon);
+               
                 try
                 {
                     while (pedido[i].Equals(pedido[i + 1], true))
@@ -268,10 +268,27 @@ namespace Liverpool_new.Class
 
 
 
-        void DarFormato(List<int> ColumaNegra, List<int> renglonColor)
+        void DarFormato(List<int> columaNegra, List<int> renglonColor)
         {
-            
-            
+            Excel.Range rng = xlWorkSheet.get_Range("A1:" +(celdas)encabezado.Count + renglon);
+            rng.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+            rng.EntireColumn.AutoFit();
+
+
+            foreach (int rc in renglonColor)
+            {
+                rng = xlWorkSheet.get_Range("A" + rc + ":" + (celdas)encabezado.Count + rc);
+                rng.Interior.ColorIndex = 33;
+            }
+
+            foreach (int cn in columaNegra)
+            {
+                xlWorkSheet.Cells[1, cn].Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
+                rng = xlWorkSheet.get_Range((celdas) cn +"1:" + (celdas)cn + renglon);
+                rng.Interior.Color = 0;
+            }
+
+           
         }
 
     }

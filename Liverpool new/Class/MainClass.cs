@@ -118,6 +118,8 @@ namespace Liverpool_new.Class
             else
                 return "No es un archivo valido";
         }
+
+        
         //Hacer listas 
         void AgregarListaPedido(string no, int tie, int mod, string tall, int cant, string col) {
             string nopedido = no.Replace("  ", string.Empty);

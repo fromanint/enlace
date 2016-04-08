@@ -69,21 +69,7 @@ namespace Liverpool_new
 
         private void txtPedido_Click(object sender, System.EventArgs e)
         {
-            if (AbrirArchivo.ShowDialog() == DialogResult.OK)
-            {
-                string nopedido = mc.AbrirArchivo(AbrirArchivo.FileName);
 
-                if (nopedido != "No es un archivo valido")
-                {
-                    txtPedido.Text = nopedido;
-                    LlenarChecklistModelos();
-                    Operaciones.Show();
-                }
-                else
-                {
-                    MessageBox.Show("No es un archivo valido");
-                }
-            }
         }
 
         private void txtPedido_TextChanged(object sender, EventArgs e)
@@ -115,6 +101,35 @@ namespace Liverpool_new
         }
 
         private void cmodelos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Abrir_Click(object sender, EventArgs e)
+        {
+            List<string> pedidos = new List<string>();
+            if (AbrirArchivo.ShowDialog() == DialogResult.OK)
+            {
+                string nopedido = mc.AbrirArchivo(AbrirArchivo.FileName);
+
+                if (nopedido != "No es un archivo valido")
+                {
+                    cbPedidos.Items.Add(nopedido);
+                    cbPedidos.SelectedIndex = 0;
+                    LlenarChecklistModelos();
+                    Operaciones.Show();
+                    InfoBox.Show();
+                }
+                else
+                {
+                    Operaciones.Hide();
+                    InfoBox.Hide();
+                    MessageBox.Show("No es un archivo valido");
+                }
+            }
+        }
+
+        private void cbPedidos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -29,45 +29,38 @@
         private void InitializeComponent()
         {
             this.Operaciones = new System.Windows.Forms.GroupBox();
-            this.cmodelos = new System.Windows.Forms.CheckedListBox();
             this.btnEmbarque = new System.Windows.Forms.Button();
             this.btnEtiVestidos = new System.Windows.Forms.Button();
             this.btnPedidoExcel = new System.Windows.Forms.Button();
+            this.cmodelos = new System.Windows.Forms.CheckedListBox();
             this.Administrar = new System.Windows.Forms.GroupBox();
             this.btnBasicos = new System.Windows.Forms.Button();
             this.btnTienda = new System.Windows.Forms.Button();
             this.btnVersion = new System.Windows.Forms.Button();
             this.AbrirArchivo = new System.Windows.Forms.OpenFileDialog();
-            this.txtPedido = new System.Windows.Forms.TextBox();
+            this.Abrir = new System.Windows.Forms.Button();
+            this.InfoBox = new System.Windows.Forms.GroupBox();
+            this.cbPedidos = new System.Windows.Forms.ComboBox();
             this.Operaciones.SuspendLayout();
             this.Administrar.SuspendLayout();
+            this.InfoBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // Operaciones
             // 
-            this.Operaciones.Controls.Add(this.cmodelos);
             this.Operaciones.Controls.Add(this.btnEmbarque);
             this.Operaciones.Controls.Add(this.btnEtiVestidos);
             this.Operaciones.Controls.Add(this.btnPedidoExcel);
-            this.Operaciones.Location = new System.Drawing.Point(33, 67);
+            this.Operaciones.Location = new System.Drawing.Point(33, 173);
             this.Operaciones.Name = "Operaciones";
-            this.Operaciones.Size = new System.Drawing.Size(526, 182);
+            this.Operaciones.Size = new System.Drawing.Size(526, 81);
             this.Operaciones.TabIndex = 0;
             this.Operaciones.TabStop = false;
             this.Operaciones.Text = "Operaciones";
             // 
-            // cmodelos
-            // 
-            this.cmodelos.FormattingEnabled = true;
-            this.cmodelos.Location = new System.Drawing.Point(403, 19);
-            this.cmodelos.Name = "cmodelos";
-            this.cmodelos.Size = new System.Drawing.Size(101, 154);
-            this.cmodelos.TabIndex = 4;
-            this.cmodelos.SelectedIndexChanged += new System.EventHandler(this.cmodelos_SelectedIndexChanged);
-            // 
             // btnEmbarque
             // 
-            this.btnEmbarque.Location = new System.Drawing.Point(256, 69);
+            this.btnEmbarque.Location = new System.Drawing.Point(256, 21);
             this.btnEmbarque.Name = "btnEmbarque";
             this.btnEmbarque.Size = new System.Drawing.Size(99, 51);
             this.btnEmbarque.TabIndex = 1;
@@ -77,7 +70,7 @@
             // 
             // btnEtiVestidos
             // 
-            this.btnEtiVestidos.Location = new System.Drawing.Point(133, 69);
+            this.btnEtiVestidos.Location = new System.Drawing.Point(133, 21);
             this.btnEtiVestidos.Name = "btnEtiVestidos";
             this.btnEtiVestidos.Size = new System.Drawing.Size(99, 51);
             this.btnEtiVestidos.TabIndex = 2;
@@ -87,13 +80,21 @@
             // 
             // btnPedidoExcel
             // 
-            this.btnPedidoExcel.Location = new System.Drawing.Point(10, 69);
+            this.btnPedidoExcel.Location = new System.Drawing.Point(10, 21);
             this.btnPedidoExcel.Name = "btnPedidoExcel";
             this.btnPedidoExcel.Size = new System.Drawing.Size(99, 51);
             this.btnPedidoExcel.TabIndex = 0;
             this.btnPedidoExcel.Text = "Generar Pedido Excel";
             this.btnPedidoExcel.UseVisualStyleBackColor = true;
             this.btnPedidoExcel.Click += new System.EventHandler(this.btnPedidoExcel_Click);
+            // 
+            // cmodelos
+            // 
+            this.cmodelos.FormattingEnabled = true;
+            this.cmodelos.Location = new System.Drawing.Point(275, 19);
+            this.cmodelos.Name = "cmodelos";
+            this.cmodelos.Size = new System.Drawing.Size(101, 124);
+            this.cmodelos.TabIndex = 4;
             // 
             // Administrar
             // 
@@ -141,24 +142,44 @@
             this.AbrirArchivo.Filter = "Archivo de texto|*.txt|Archivo delimitado por comas|*.csv";
             this.AbrirArchivo.FilterIndex = 2;
             // 
-            // txtPedido
+            // Abrir
             // 
-            this.txtPedido.Location = new System.Drawing.Point(106, 12);
-            this.txtPedido.Name = "txtPedido";
-            this.txtPedido.ReadOnly = true;
-            this.txtPedido.Size = new System.Drawing.Size(159, 20);
-            this.txtPedido.TabIndex = 3;
-            this.txtPedido.Text = "Abrir Pedido";
-            this.txtPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPedido.Click += new System.EventHandler(this.txtPedido_Click);
-            this.txtPedido.TextChanged += new System.EventHandler(this.txtPedido_TextChanged);
+            this.Abrir.Location = new System.Drawing.Point(33, 12);
+            this.Abrir.Name = "Abrir";
+            this.Abrir.Size = new System.Drawing.Size(75, 23);
+            this.Abrir.TabIndex = 3;
+            this.Abrir.Text = "Abrir Archivo";
+            this.Abrir.UseVisualStyleBackColor = true;
+            this.Abrir.Click += new System.EventHandler(this.Abrir_Click);
+            // 
+            // InfoBox
+            // 
+            this.InfoBox.Controls.Add(this.cbPedidos);
+            this.InfoBox.Controls.Add(this.cmodelos);
+            this.InfoBox.Location = new System.Drawing.Point(166, 12);
+            this.InfoBox.Name = "InfoBox";
+            this.InfoBox.Size = new System.Drawing.Size(393, 155);
+            this.InfoBox.TabIndex = 5;
+            this.InfoBox.TabStop = false;
+            this.InfoBox.Text = "Informacion";
+            this.InfoBox.Visible = false;
+            // 
+            // cbPedidos
+            // 
+            this.cbPedidos.FormattingEnabled = true;
+            this.cbPedidos.Location = new System.Drawing.Point(51, 37);
+            this.cbPedidos.Name = "cbPedidos";
+            this.cbPedidos.Size = new System.Drawing.Size(121, 21);
+            this.cbPedidos.TabIndex = 5;
+            this.cbPedidos.SelectedIndexChanged += new System.EventHandler(this.cbPedidos_SelectedIndexChanged);
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 261);
-            this.Controls.Add(this.txtPedido);
+            this.Controls.Add(this.InfoBox);
+            this.Controls.Add(this.Abrir);
             this.Controls.Add(this.btnVersion);
             this.Controls.Add(this.Administrar);
             this.Controls.Add(this.Operaciones);
@@ -168,8 +189,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Operaciones.ResumeLayout(false);
             this.Administrar.ResumeLayout(false);
+            this.InfoBox.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -183,9 +204,11 @@
         private System.Windows.Forms.Button btnTienda;
         private System.Windows.Forms.Button btnVersion;
         private System.Windows.Forms.OpenFileDialog AbrirArchivo;
-        private System.Windows.Forms.TextBox txtPedido;
         private System.Windows.Forms.CheckedListBox cmodelos;
         private System.Windows.Forms.Button btnBasicos;
+        private System.Windows.Forms.Button Abrir;
+        private System.Windows.Forms.GroupBox InfoBox;
+        private System.Windows.Forms.ComboBox cbPedidos;
     }
 }
 
