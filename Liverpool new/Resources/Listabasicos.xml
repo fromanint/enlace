@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <Modelo>
+    <Orden>1</Orden>
+    <No_Modelo>654</No_Modelo>
+    <Color>AZUL</Color>
+  </Modelo>
+  <Modelo>
+    <Orden>2</Orden>
+    <No_Modelo>824</No_Modelo>
+    <Color>VERDE</Color>
+  </Modelo>
+  <Modelo>
+    <Orden>3</Orden>
+    <No_Modelo>824</No_Modelo>
+    <Color>ROSA</Color>
+  </Modelo>
+  <Modelo>
+    <Orden>4</Orden>
+    <No_Modelo>823</No_Modelo>
+    <Color>ROSA</Color>
+  </Modelo>
+  <Modelo>
+    <Orden>5</Orden>
+    <No_Modelo>1028</No_Modelo>
+    <Color>BLANCO</Color>
+  </Modelo>
+  <Modelo>
+    <Orden>6</Orden>
+    <No_Modelo>1032</No_Modelo>
+    <Color>ROSA</Color>
+  </Modelo>
+  <Modelo>
+    <Orden>7</Orden>
+    <No_Modelo>1032</No_Modelo>
+    <Color>BLANCO</Color>
+  </Modelo>
+</DocumentElement>

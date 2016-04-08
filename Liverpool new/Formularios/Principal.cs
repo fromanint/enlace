@@ -133,5 +133,11 @@ namespace Liverpool_new
         {
 
         }
+
+        private void btnBasicos_Click(object sender, EventArgs e)
+        {
+            Basicos frm = new Basicos();
+            frm.Show();
+        }
     }
 }

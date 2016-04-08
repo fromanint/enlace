@@ -17,17 +17,21 @@ namespace Liverpool_new.Class
         string precio;
 
 
-        public Modelo(string mod, string col, string tall, string fecha, string codigo, string pre)
+        public Modelo(string mod, string col, string tall = "", string fecha = "", string codigo = "", string pre = "")
         {
+            talla = fecha_embarque = sku = precio = "";
             modelo = mod;
             color = col;
             talla = tall;
-            sku_barras = codigo.Insert(codigo.Length - 1, "-");
-            sku = codigo;
+            if (codigo != "")
+            { sku_barras = codigo.Insert(codigo.Length - 1, "-"); 
+            sku = codigo; }
             precio = pre;
+            if(fecha != "") { 
             fecha = fecha.Remove(6, 2);
             fecha = fecha.Remove(0, 3);
             fecha_embarque = fecha;
+            }
         }
         public Modelo()
         { }

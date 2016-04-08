@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\ControlBasicos.cs" />
     <Compile Include="Class\ControlTiendas.cs" />
     <Compile Include="Class\Control_Eti_Cajas.cs" />
     <Compile Include="Class\HojaPedidoExcel.cs" />
@@ -74,6 +75,12 @@
     </Compile>
     <Compile Include="Formularios\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Basicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Basicos.Designer.cs">
+      <DependentUpon>Basicos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Eti_Cajas.cs">
       <SubType>Form</SubType>
@@ -98,6 +105,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Basicos.resx">
+      <DependentUpon>Basicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Eti_Cajas.resx">
       <DependentUpon>Eti_Cajas.cs</DependentUpon>
@@ -137,10 +147,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Resources\Plantillas\PLANTILLA1.dotx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\Plantillas\PLANTILLA2.dotx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -160,10 +170,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Listatiendas.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Listabasicos.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\PlantillaEtiqutas\ZDARC.EXE">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

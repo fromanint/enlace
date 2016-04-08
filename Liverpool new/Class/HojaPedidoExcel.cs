@@ -177,11 +177,12 @@ namespace Liverpool_new.Class
                 }
                 catch { }
 
-                if (pedido[i].Equals(pedido[i - 1], true))
-                {
-                    no_columna = BuscarColumnaModeloTalla(pedido[i].ObtenerModelo() + pedido[i].ObtenerColorChar(), pedido[i].ObtenerTalla());
-                    xlWorkSheet.Cells[no_renglon, no_columna] = pedido[i].ObtenerCantidad();
-                }
+                    if (pedido[i].Equals(pedido[i - 1], true))
+                    {
+                        no_columna = BuscarColumnaModeloTalla(pedido[i].ObtenerModelo() + pedido[i].ObtenerColorChar(), pedido[i].ObtenerTalla());
+                        xlWorkSheet.Cells[no_renglon, no_columna] = pedido[i].ObtenerCantidad();
+                    }
+        
 
 
 

@@ -222,20 +222,23 @@ namespace Liverpool_new.Class
         //Filtros
         public List<Modelo> EliminarRepetidos(bool talla = false, bool color = false) {
             List<Modelo> filtro = new List<Modelo>();
+            List<Modelo> Orden = OrdenarListaModelo();
             filtro.Add(modelo[0]);
-            for(int i =0;i<modelo.Count()-1;i++)
+            for(int i =0;i<Orden.Count()-1;i++)
                {
              
-                if (!modelo[i+1].Equals(modelo[i],talla,color))
+                if (!Orden[i+1].Equals(Orden[i],talla,color))
                 {
-                    Modelo mod = modelo[i+1];
+                    Modelo mod = Orden[i+1];
                     filtro.Add(mod);
                 }   
             }
             return filtro;
         }
+        
         public List<Pedido> EliminarRepetidos(bool tienda = false) {
             List<Pedido> filtro = new List<Pedido>();
+            OrdenarListaPedido();
             filtro.Add(pedido[0]);
             for (int i = 0; i < pedido.Count() - 1; i++)
             {

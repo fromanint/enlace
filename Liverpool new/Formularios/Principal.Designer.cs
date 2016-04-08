@@ -115,6 +115,7 @@
             this.btnBasicos.TabIndex = 1;
             this.btnBasicos.Text = "Modelos Basicos";
             this.btnBasicos.UseVisualStyleBackColor = true;
+            this.btnBasicos.Click += new System.EventHandler(this.btnBasicos_Click);
             // 
             // btnTienda
             // 

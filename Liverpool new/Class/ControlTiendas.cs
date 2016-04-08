@@ -15,10 +15,19 @@ namespace Liverpool_new.Class
             {
                 string filePath = "Resources\\Listatiendas.xml";
                 listaTiendas.ReadXml(filePath);
-                tablatiendas = listaTiendas.Tables[0];
-                tablatiendas.Columns[0].Unique = true;
-                tablatiendas.Columns[0].AllowDBNull = false;
-                tablatiendas.Columns[0].ReadOnly = true;
+                DataTable dt = listaTiendas.Tables[0];
+                dt.Columns[0].Unique = true;
+                dt.Columns[0].AllowDBNull = false;
+                dt.Columns[0].ReadOnly = true;
+
+                tablatiendas = dt.Clone();
+                //change data type of column
+                tablatiendas.Columns[0].DataType = typeof(Int32);
+                //import row to cloned datatable
+                foreach (DataRow row in dt.Rows)
+                {
+                    tablatiendas.ImportRow(row);
+                }
                 return true;
             }
             catch
