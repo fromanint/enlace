@@ -10,6 +10,7 @@ namespace Liverpool_new.Class
 {
     public class MainClass
     {
+        public List<Pedido> pedidosarchivo = new List<Pedido>(); 
         public List<Pedido> pedido = new List<Pedido>();
         public List<Modelo> modelo = new List<Modelo>();
         public string NombreArchivo;
@@ -28,7 +29,7 @@ namespace Liverpool_new.Class
         }
 
         //Abrir archivo
-        public string AbrirArchivo(string NombreArchivo)
+        public List<string> AbrirArchivo(string NombreArchivo)
         {
             string extension = Path.GetExtension(NombreArchivo);
             switch (extension)
@@ -46,8 +47,8 @@ namespace Liverpool_new.Class
                     return ArchivoTXT(NombreArchivo);
          
                 default:
-                    return Regresa_NoPedido();
-                 
+                    return Regrasa_NoPedidos();
+
 
             }
 
@@ -58,7 +59,7 @@ namespace Liverpool_new.Class
 
         //leer archivo CSV
         
-        string ArchivoCSV(string NombreArchivo) {
+        List<string> ArchivoCSV(string NombreArchivo) {
             StreamReader sr = new StreamReader(NombreArchivo);
             pedido.Clear();
             modelo.Clear();
@@ -71,9 +72,7 @@ namespace Liverpool_new.Class
                     string lineas = sr.ReadLine();
                     string[] settemporal = lineas.Split(delimiterChars);
                     AgregarListaPedido(settemporal[0], int.Parse(settemporal[18]), int.Parse(settemporal[7]), settemporal[9], int.Parse(settemporal[19]), settemporal[8]);
-                    AgregarListaModelo(settemporal[7], settemporal[8], settemporal[9], settemporal[13], settemporal[5], settemporal[16]);
-               
-                               
+                    AgregarListaModelo(settemporal[7], settemporal[8], settemporal[9], settemporal[13], settemporal[5], settemporal[16]);             
                 }
                 catch
                 {
@@ -86,10 +85,10 @@ namespace Liverpool_new.Class
             List<Modelo> ModNoRep = EliminarRepetidos(true,true) ;
             modelo = ModNoRep;
             sr.Close();
-            return Regresa_NoPedido();
+            return Regrasa_NoPedidos();
         }
         //Abrir archivo TXt
-        string ArchivoTXT(string NombreArchivo) {
+        List<string> ArchivoTXT(string NombreArchivo) {
            StreamReader sr = new StreamReader(NombreArchivo);
             pedido.Clear();
             modelo.Clear();
@@ -108,16 +107,20 @@ namespace Liverpool_new.Class
 
             }
             sr.Close();
-            return Regresa_NoPedido();
+            return Regrasa_NoPedidos();
         }
 
-        public string Regresa_NoPedido()
+        public List<string> Regrasa_NoPedidos()
         {
-            if (pedido.Count != 0)
-                return pedido[0].GetNoPedido();
-            else
-                return "No es un archivo valido";
+            List<string> no_pedidos= new List<string>();
+            List<Pedido> no_pedidos_pedido = EliminarRepetidos(false);
+            foreach (Pedido ped in no_pedidos_pedido)
+            {
+                no_pedidos.Add(ped.GetNoPedido());
+            }
+            return no_pedidos;
         }
+
 
         
         //Hacer listas 

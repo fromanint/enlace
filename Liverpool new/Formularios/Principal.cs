@@ -110,13 +110,19 @@ namespace Liverpool_new
             List<string> pedidos = new List<string>();
             if (AbrirArchivo.ShowDialog() == DialogResult.OK)
             {
-                string nopedido = mc.AbrirArchivo(AbrirArchivo.FileName);
-
-                if (nopedido != "No es un archivo valido")
+                //string nopedido = mc.AbrirArchivo(AbrirArchivo.FileName);
+                List<string> nopedido = mc.AbrirArchivo(AbrirArchivo.FileName);
+                if (nopedido.Count != 0)
                 {
-                    cbPedidos.Items.Add(nopedido);
+                    foreach (string s in nopedido)
+                    { 
+                    cbPedidos.Items.Add(s);
+                    
+                    }
                     cbPedidos.SelectedIndex = 0;
+
                     LlenarChecklistModelos();
+                    
                     Operaciones.Show();
                     InfoBox.Show();
                 }
