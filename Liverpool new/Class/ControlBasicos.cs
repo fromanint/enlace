@@ -68,6 +68,17 @@ namespace Liverpool_new.Class
             return basicos;
         }
 
+        public List<string> ListaBasicosString() {
+            List<string> basicos = new List<string>();
+            foreach (DataRow mod in tablaBasicos.Rows)
+            {
+                string s1 = mod[1].ToString();
+                string s2= mod[2].ToString();
+                basicos.Add(s1+s2[0]);
+            }
+            return basicos;
+        }
+
         public string Guardar(List<Modelo> modelos)
         {
             tablaBasicos.Rows.Clear();

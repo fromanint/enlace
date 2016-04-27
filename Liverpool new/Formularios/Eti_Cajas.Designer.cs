@@ -189,6 +189,7 @@
             this.ListaTiendas.Name = "ListaTiendas";
             this.ListaTiendas.Size = new System.Drawing.Size(724, 289);
             this.ListaTiendas.TabIndex = 8;
+            this.ListaTiendas.SelectedIndexChanged += new System.EventHandler(this.ListaTiendas_SelectedIndexChanged);
             // 
             // Eti_Cajas
             // 

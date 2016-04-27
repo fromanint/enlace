@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 
 namespace Liverpool_new.Class
 {
     public class MainClass
     {
-        public List<Pedido> pedidosarchivo = new List<Pedido>(); 
-        public List<Pedido> pedido = new List<Pedido>();
-        public List<Modelo> modelo = new List<Modelo>();
+        public List<Pedido> pedidosarchivo = new List<Pedido>(); //Todos los pedidos del archivo
+        public List<Pedido> pedido = new List<Pedido>();//Pedido Seleccionado
+       // public List<Modelo> modelo = new List<Modelo>();
         public string NombreArchivo;
 
         //Al Abrir por primera Vez crear directorio para archivos de Salida
@@ -31,6 +32,8 @@ namespace Liverpool_new.Class
         //Abrir archivo
         public List<string> AbrirArchivo(string NombreArchivo)
         {
+            pedidosarchivo.Clear();
+            pedido.Clear();
             string extension = Path.GetExtension(NombreArchivo);
             switch (extension)
             {
@@ -47,7 +50,7 @@ namespace Liverpool_new.Class
                     return ArchivoTXT(NombreArchivo);
          
                 default:
-                    return Regrasa_NoPedidos();
+                    return Regresa_NoPedidos();
 
 
             }
@@ -62,7 +65,7 @@ namespace Liverpool_new.Class
         List<string> ArchivoCSV(string NombreArchivo) {
             StreamReader sr = new StreamReader(NombreArchivo);
             pedido.Clear();
-            modelo.Clear();
+         //   modelo.Clear();
             while (sr.Peek() != -1)
             {
                 char[] delimiterChars = { ',' };
@@ -71,27 +74,26 @@ namespace Liverpool_new.Class
                 {
                     string lineas = sr.ReadLine();
                     string[] settemporal = lineas.Split(delimiterChars);
-                    AgregarListaPedido(settemporal[0], int.Parse(settemporal[18]), int.Parse(settemporal[7]), settemporal[9], int.Parse(settemporal[19]), settemporal[8]);
-                    AgregarListaModelo(settemporal[7], settemporal[8], settemporal[9], settemporal[13], settemporal[5], settemporal[16]);             
+                    string talla = settemporal[9];
+                    Modelo mod = new Modelo(settemporal[7], settemporal[8], VerificaTalla(talla), settemporal[13], settemporal[5], settemporal[16]);                    
+                    AgregarListaPedido(settemporal[0], int.Parse(settemporal[18]), mod, int.Parse(settemporal[19]));
+                  //  AgregarListaModelo(settemporal[7], settemporal[8], settemporal[9], settemporal[13], settemporal[5], settemporal[16]);             
                 }
                 catch
                 {
                 }
-
-
-
             }
 
-            List<Modelo> ModNoRep = EliminarRepetidos(true,true) ;
-            modelo = ModNoRep;
+       /*     List<Modelo> ModNoRep = EliminarRepetidos(true,true) ;
+            modelo = ModNoRep;*/
             sr.Close();
-            return Regrasa_NoPedidos();
+            return Regresa_NoPedidos();
         }
         //Abrir archivo TXt
         List<string> ArchivoTXT(string NombreArchivo) {
            StreamReader sr = new StreamReader(NombreArchivo);
             pedido.Clear();
-            modelo.Clear();
+            //modelo.Clear();
             while (sr.Peek() != -1)
             {
                  try
@@ -107,13 +109,13 @@ namespace Liverpool_new.Class
 
             }
             sr.Close();
-            return Regrasa_NoPedidos();
+            return Regresa_NoPedidos();
         }
 
-        public List<string> Regrasa_NoPedidos()
+        public List<string> Regresa_NoPedidos()
         {
             List<string> no_pedidos= new List<string>();
-            List<Pedido> no_pedidos_pedido = EliminarRepetidos(false);
+            List<Pedido> no_pedidos_pedido = EliminarRepetidos(pedidosarchivo,false);
             foreach (Pedido ped in no_pedidos_pedido)
             {
                 no_pedidos.Add(ped.GetNoPedido());
@@ -121,50 +123,94 @@ namespace Liverpool_new.Class
             return no_pedidos;
         }
 
+        public List<string> Seleccion_Pedido(string pedido_seleccionado)
+        {
+            pedido.Clear();
+            List<string> modelos = new List<string>();
+            foreach (Pedido ped in pedidosarchivo)
+            {
+                if (ped.GetNoPedido() == pedido_seleccionado)
+                {
+                    pedido.Add(ped);
+                    modelos.Add(ped.ObtenerModelo() + ped.ObtenerColorChar());
+                }
+            }
+            modelos = modelos.Distinct().ToList();
+            return modelos;
+        }
+
+        public bool TieneBasicos()
+        {
+            
+            ControlBasicos cb = new ControlBasicos();
+            DataSet dtbasicos = new DataSet();
+            cb.Iniciar(dtbasicos);
+            List<string> listabasicos = cb.ListaBasicosString();
+            foreach (Pedido ped in pedido)
+            {
+                foreach (string s in listabasicos)
+                {
+                    string x = ped.ObtenerModelo() + ped.ObtenerColorChar();
+                    if (x == s)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        string VerificaTalla(string talla)
+        {
+            if (talla == "3X" || talla == "3x")
+            {
+                talla = "4T";
+            }
+            if (talla.IndexOf("T") < 0 && talla.IndexOf("t") < 0)
+            { talla += "T"; }
+          
+            return talla;
+        }
 
         
         //Hacer listas 
-        void AgregarListaPedido(string no, int tie, int mod, string tall, int cant, string col) {
+        void AgregarListaPedido(string no, int tie, Modelo mod, int cant) {
             string nopedido = no.Replace("  ", string.Empty);
-            string talla = tall;
-            Pedido temporal = new Pedido(nopedido, tie, mod, talla, cant, col);
-            pedido.Add(temporal);
+            Pedido temporal = new Pedido(nopedido, tie, mod, cant);
+            pedidosarchivo.Add(temporal);
         }
-        void AgregarListaModelo(string mod, string col, string tall, string fecha, string codigo, string pre) {
-            if (tall.IndexOf("T") < 0 && tall.IndexOf("t") < 0)
-            { tall += "T"; }
-            if (tall == "3X" || tall == "3x")
-            {
-                tall = "4T";
-            }
-            Modelo temporal = new Modelo(mod, col, tall, fecha, codigo, pre);
-            modelo.Add(temporal);
-        }
+
+
+
         //Crear archivo de etiquetas Zebra M4
-        public bool Crear_Etiquetas() {
+        public bool Crear_Etiquetas(bool basicos) {
             string ruta = "Output//Etiquetas//";
-            List<Modelo> modelos = EliminarRepetidos(false, false);
-            foreach (Modelo mod in modelos)
+            List<Modelo> modelos = new List<Modelo>();
+            foreach (Pedido ped in pedido)
+            {
+                modelos.Add(ped.ObtenerModeloClass());
+            }
+            List<Modelo> modelo = OrdenarListaModelo(modelos, basicos);
+             modelo = EliminarRepetidos(modelo,false, false);
+            foreach (Modelo mod in modelo)
             {
                 ruta += mod.ObtenerModelo() + "-";
             }
             ruta = ruta.Remove(ruta.Length-1);
             CrearDirectorio(ruta);
-            return CrearArchivosEtiquetas(ruta);
+            return CrearArchivosEtiquetas(ruta,modelos);
         }
-        bool CrearArchivosEtiquetas(string ruta)
+        bool CrearArchivosEtiquetas(string ruta, List<Modelo> modelo)
         {
+            
             try
             {
-                foreach (Modelo mod in modelo)
+               foreach (Modelo mod in modelo)
                 {
-                    string path = ruta + "//" + mod.ObtenerModelo() + mod.ObtenerTalla() + mod.ObtenerColorChar() + ".468";
+                    string path = ruta + "//" + mod.ObtenerModelo()+ mod.ObtenerColorChar() + mod.ObtenerTalla()  + ".468";
                     string archivo = PlantillaEtiquetas(mod);
                     File.WriteAllText(path, archivo);
-                       // StreamWriter file = new StreamWriter(path);
-                        //file.WriteLine(archivo);
-
-
                 }
                 return true;
             }
@@ -215,40 +261,48 @@ namespace Liverpool_new.Class
             return archivo;
         }
         //Crear Hoja de excel para pedidos
-        public string CrearPedidoExcel()
+        public string CrearPedidoExcel(bool basicos)
         {
             HojaPedidoExcel hpe = new HojaPedidoExcel();
-            string msg = hpe.Iniciar(OrdenarPedidoTienda(),OrdenarListaModelo());
+            List<Modelo> listamodelo = new List<Modelo>();
+            foreach (Pedido ped in pedido)
+            {
+                Modelo mod = new Modelo(ped.ObtenerModelo(), ped.ObtenerColor(), ped.ObtenerTalla());
+                listamodelo.Add(mod);
+            }
+            listamodelo = OrdenarListaModelo(listamodelo,basicos);
+            listamodelo = EliminarRepetidos(listamodelo,true);
+
+            string msg = hpe.Iniciar(OrdenarPedidoTienda(pedido),listamodelo);
+           // string msg = hpe.Iniciar(OrdenarPedidoTienda(),OrdenarListaModelo());
             return msg;
         }
 
-        //Filtros
-        public List<Modelo> EliminarRepetidos(bool talla = false, bool color = false) {
+        public List<Modelo> EliminarRepetidos(List<Modelo> modelo,bool talla = false, bool color = false) {
             List<Modelo> filtro = new List<Modelo>();
-            List<Modelo> Orden = OrdenarListaModelo();
             filtro.Add(modelo[0]);
-            for(int i =0;i<Orden.Count()-1;i++)
+            for(int i =0;i< modelo.Count()-1;i++)
                {
              
-                if (!Orden[i+1].Equals(Orden[i],talla,color))
+                if (!modelo[i+1].Equals(modelo[i],talla,color))
                 {
-                    Modelo mod = Orden[i+1];
+                    Modelo mod = modelo[i+1];
                     filtro.Add(mod);
                 }   
             }
             return filtro;
         }
         
-        public List<Pedido> EliminarRepetidos(bool tienda = false) {
+        public List<Pedido> EliminarRepetidos(List<Pedido> lista,bool tienda = false) {
             List<Pedido> filtro = new List<Pedido>();
-            OrdenarListaPedido();
-            filtro.Add(pedido[0]);
-            for (int i = 0; i < pedido.Count() - 1; i++)
+            OrdenarListaPedido(lista);
+            filtro.Add(lista[0]);
+            for (int i = 0; i < lista.Count() - 1; i++)
             {
 
-                if (!pedido[i + 1].Equals(pedido[i], tienda))
+                if (!lista[i + 1].Equals(lista[i], tienda))
                 {
-                    Pedido ped = pedido[i + 1];
+                    Pedido ped = lista[i + 1];
                     filtro.Add(ped);
                 }
             }
@@ -256,25 +310,41 @@ namespace Liverpool_new.Class
         }
 
         //Ordenamientos
-        public List<Pedido> OrdenarListaPedido() {
-            List<Pedido> SortedList = pedido.OrderBy(o => o.GetNoPedido()).ToList();
+        public List<Pedido> OrdenarListaPedido(List<Pedido> lista) {
+            List<Pedido> SortedList = lista.OrderBy(o => o.GetNoPedido()).ToList();
             return SortedList;
         } 
-        public List<Pedido> OrdenarPedidoTienda() {
+        public List<Pedido> OrdenarPedidoTienda(List<Pedido> lista) {
             List<Pedido> SortedList = pedido.OrderBy(o => o.ObtenerTienda()).ToList();            
             return SortedList;
         }
-        public List<Modelo> OrdenarListaModelo()
+
+        public List<Modelo> OrdenarListaModelo(List<Modelo> modelo, bool basicos = false)
         {
-            List<Modelo> SortedList = modelo.OrderBy(o => o.ObtenerModelo()).ThenBy(o => o.ObtenerTalla()).ThenBy(o=>o.ObtenerColor()).ToList();
-            return SortedList;
-        }
-        public List<Modelo> OrdenEspecialModelo()
-        {
-            List<Modelo> SortedList = modelo.OrderBy(o => o.ObtenerModelo()).ThenBy(o => o.ObtenerColor()).ToList();
+            List<Modelo> SortedList = new List<Modelo>();
+            if (basicos)
+            {
+               // SortedList = modelo.OrderBy(o => o.ObtenerModelo()).ThenBy(o => o.ObtenerColor()).ThenBy(o => o.ObtenerTalla()).ToList();
+                ControlBasicos cb = new ControlBasicos();
+                DataSet lbasicos = new DataSet();
+                cb.Iniciar(lbasicos);
+                List<string> modBasicos = cb.ListaBasicosString();
+                foreach (string s in modBasicos)
+                {
+                    IEnumerable<Modelo> ConsultaModelos =
+                     from modelos in modelo
+                     where modelos.ObtenerModelo()+modelos.ObtenerColorChar() == s
+                     select modelos;
+                    SortedList.AddRange(ConsultaModelos.ToList());
+                }
+            }
+            else { 
+                SortedList = modelo.OrderBy(o => o.ObtenerModelo()).ThenBy(o => o.ObtenerColor()).ThenBy(o => o.ObtenerTalla()).ToList();
+            }
             return SortedList;
         }
 
+ 
 
 
     }

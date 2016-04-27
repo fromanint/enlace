@@ -40,8 +40,8 @@
             this.AbrirArchivo = new System.Windows.Forms.OpenFileDialog();
             this.Abrir = new System.Windows.Forms.Button();
             this.InfoBox = new System.Windows.Forms.GroupBox();
+            this.cbBasicos = new System.Windows.Forms.CheckBox();
             this.cbPedidos = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.Operaciones.SuspendLayout();
             this.Administrar.SuspendLayout();
             this.InfoBox.SuspendLayout();
@@ -156,7 +156,7 @@
             // 
             // InfoBox
             // 
-            this.InfoBox.Controls.Add(this.checkBox1);
+            this.InfoBox.Controls.Add(this.cbBasicos);
             this.InfoBox.Controls.Add(this.cbPedidos);
             this.InfoBox.Controls.Add(this.cmodelos);
             this.InfoBox.Location = new System.Drawing.Point(166, 12);
@@ -167,6 +167,16 @@
             this.InfoBox.Text = "Informacion";
             this.InfoBox.Visible = false;
             // 
+            // cbBasicos
+            // 
+            this.cbBasicos.AutoSize = true;
+            this.cbBasicos.Location = new System.Drawing.Point(76, 66);
+            this.cbBasicos.Name = "cbBasicos";
+            this.cbBasicos.Size = new System.Drawing.Size(63, 17);
+            this.cbBasicos.TabIndex = 6;
+            this.cbBasicos.Text = "Básicos";
+            this.cbBasicos.UseVisualStyleBackColor = true;
+            // 
             // cbPedidos
             // 
             this.cbPedidos.FormattingEnabled = true;
@@ -175,16 +185,6 @@
             this.cbPedidos.Size = new System.Drawing.Size(121, 21);
             this.cbPedidos.TabIndex = 5;
             this.cbPedidos.SelectedIndexChanged += new System.EventHandler(this.cbPedidos_SelectedIndexChanged);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(76, 66);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(63, 17);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Básicos";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Principal
             // 
@@ -223,7 +223,7 @@
         private System.Windows.Forms.Button Abrir;
         private System.Windows.Forms.GroupBox InfoBox;
         private System.Windows.Forms.ComboBox cbPedidos;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbBasicos;
     }
 }
 

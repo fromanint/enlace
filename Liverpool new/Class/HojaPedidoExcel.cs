@@ -83,7 +83,7 @@ namespace Liverpool_new.Class
                 xlApp = new Excel.Application();
                 xlWorkBook = xlApp.Workbooks.Add(misValue);
                 xlApp.Visible = true;
-                xlWorkSheet = (Excel.Worksheet)xlWorkBook.ActiveSheet;//.Worksheets.get_Item(1);
+                xlWorkSheet = (Excel.Worksheet)xlWorkBook.ActiveSheet;
                 return "";
             }
             catch
@@ -153,8 +153,9 @@ namespace Liverpool_new.Class
             ct.Iniciar(tipotiend);
             int no_renglon = 2;
             int no_columna = 1;
-            for (int i = 0; i < pedido.Count-1; i++, no_renglon++)
+            for (int i = 0; i <= pedido.Count-1; no_renglon++)
             {
+                int tienda = pedido[i].ObtenerTienda();
                 no_columna = 1;
                 xlWorkSheet.Cells[no_renglon, no_columna] = pedido[i].ObtenerTienda();
                 no_columna++;
@@ -165,10 +166,9 @@ namespace Liverpool_new.Class
                 {
                     RenglonColor.Add(no_renglon);
                 }
-               
                 try
                 {
-                    while (pedido[i].Equals(pedido[i + 1], true))
+                    while (pedido[i].ObtenerTienda() == tienda)
                     {
                         no_columna = BuscarColumnaModeloTalla(pedido[i].ObtenerModelo() + pedido[i].ObtenerColorChar(), pedido[i].ObtenerTalla());
                         xlWorkSheet.Cells[no_renglon, no_columna] = pedido[i].ObtenerCantidad();
@@ -176,16 +176,6 @@ namespace Liverpool_new.Class
                     }
                 }
                 catch { }
-
-                    if (pedido[i].Equals(pedido[i - 1], true))
-                    {
-                        no_columna = BuscarColumnaModeloTalla(pedido[i].ObtenerModelo() + pedido[i].ObtenerColorChar(), pedido[i].ObtenerTalla());
-                        xlWorkSheet.Cells[no_renglon, no_columna] = pedido[i].ObtenerCantidad();
-                    }
-        
-
-
-
             }
             renglon = no_renglon;
             return RenglonColor;
@@ -252,9 +242,14 @@ namespace Liverpool_new.Class
                 xlWorkSheet.Cells[renglon, i].FormulaLocal = "=SUMAR.si(B2:B" + (renglon - 3) + ",\"f\"," + (celdas)i + "2:" + (celdas)i + (renglon - 3) + ")";
             }
 
-            //contarcajas
             renglon -= 2;
-          
+
+            //contar total
+            xlWorkSheet.Cells[renglon, no_columna].FormulaLocal = "=SUMA("+(celdas)no_columna+ 2 +":"+ (celdas)no_columna + (renglon - 1)+")";
+            renglon++;
+            //contarcajas
+
+
             xlWorkSheet.Cells[renglon, no_columna].FormulaLocal = "M";
             xlWorkSheet.Cells[renglon, no_columna+1].FormulaLocal = "=Contar.si(" + (celdas)(no_columna+1) + 2 + ":" + (celdas)(no_columna+1) + (renglon-1) + ","+ (celdas)no_columna+(renglon);
             renglon++;

@@ -113,9 +113,10 @@ namespace Liverpool_new.Formularios
                 Modelo mod = modelos[selectedIndex];
                 modelos.RemoveAt(selectedIndex);
                 modelos.Insert(selectedIndex-1, mod);
+                ImprimirResultado(false);
+                lbModelos.SetSelected(selectedIndex - 1, true);
             }
-            ImprimirResultado(false);
-            lbModelos.SetSelected(selectedIndex - 1,true);
+
         }
 
         private void Bajar_Click(object sender, EventArgs e)

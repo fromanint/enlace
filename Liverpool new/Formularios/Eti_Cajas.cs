@@ -22,7 +22,8 @@ namespace Liverpool_new.Formularios
         private void Eti_Cajas_Load(object sender, EventArgs e)
         {
             ListaTiendas.Items.Clear();
-            List<int> pedido = Principal.mc.pedido.Select(x => x.ObtenerTienda()).Distinct().ToList(); 
+            List<int> pedido = Principal.mc.pedido.Select(x => x.ObtenerTienda()).Distinct().ToList();
+            pedido.Sort();
 
             for (int i =0; i<=pedido.Count-1;i++)
             {
@@ -63,6 +64,11 @@ namespace Liverpool_new.Formularios
             }
             string msg = cec.Crear_Etiquetas_Embarque(listaTiendas, Principal.mc.pedido[0].GetNoPedido(),fechaa.Value.ToString("dd-MM-yy"));
             MessageBox.Show(msg);
+        }
+
+        private void ListaTiendas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

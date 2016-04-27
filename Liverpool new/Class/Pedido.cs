@@ -10,28 +10,29 @@ namespace Liverpool_new.Class
     {
         string nopedido; //1
         int tienda;      //2
-        int modelo;      //3
-        string talla;    //4
+        Modelo modelo;      //3
         int cantidad;    //5
-        string color;    //6
+            //6
 
 
-        public Pedido(string no, int tie, int mod, string tall, int cant, string col)
+        public Pedido(string no, int tie, Modelo mod, int cant)
         {
             nopedido = no;
             tienda = tie;
             modelo = mod;
-            talla = tall;
             cantidad = cant;
-            color = col;
+            
         }
 
         public string GetNoPedido() {return nopedido;}
         public int ObtenerTienda() { return tienda; }
-        public char ObtenerColorChar() { return color[0]; }
-        public string ObtenerModelo() { return modelo.ToString(); }
-        public string ObtenerTalla() { return talla; }
+        public char ObtenerColorChar() { return modelo.ObtenerColorChar(); }
+        public string ObtenerColor() { return modelo.ObtenerColor(); }
+        public string ObtenerModelo() { return modelo.ObtenerModelo(); }
+        public string ObtenerTalla() { return modelo.ObtenerTalla(); }
         public int ObtenerCantidad() { return cantidad; }
+        public Modelo ObtenerModeloClass() { return modelo; }
+
 
         public bool Equals(Pedido other,  bool tien)
         {

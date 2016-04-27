@@ -51,14 +51,14 @@ namespace Liverpool_new
 
         private void btnPedidoExcel_Click(object sender, EventArgs e)
         {
-            string msg = mc.CrearPedidoExcel();
+            string msg = mc.CrearPedidoExcel(cbBasicos.Checked);
             MessageBox.Show(msg);
         }
 
         private void btnEtiVestidos_Click(object sender, EventArgs e)
         {
             List<string> modelos = new List<string> ();
-            if (mc.Crear_Etiquetas())
+            if (mc.Crear_Etiquetas(cbBasicos.Checked))
             { MessageBox.Show("Archivos Creados"); }
             else
             { MessageBox.Show("No se han podido crear los archivos"); }
@@ -77,27 +77,16 @@ namespace Liverpool_new
           
         }
         //control para llenar la checklist de modelos
-        void LlenarChecklistModelos()
+        void LlenarChecklistModelos(List<string> modelos)
         {
-            List<Modelo> modelos = mc.EliminarRepetidos(false,true);
             cmodelos.Items.Clear();
-
-                cmodelos.Items.Add(modelos[0].ObtenerModelo());
-
-            for (int i = 0; i < modelos.Count()-1; i++)
+            foreach (string s in modelos)
             {
-                if (!modelos[i + 1].Equals(modelos[i], false, false))
-                {
-                    cmodelos.Items.Add(modelos[i+1].ObtenerModelo());
-                }
-                else
-                {
-                    cmodelos.Items.Add(modelos[i+1].ObtenerModelo() +  " " + modelos[i+1].ObtenerColorChar());
-                }    
-            }       
+                cmodelos.Items.Add(s);
+  
+            }
             for (int i = 0; i < cmodelos.Items.Count; i++)
             { cmodelos.SetItemChecked(i, true); }
-
         }
 
         private void cmodelos_SelectedIndexChanged(object sender, EventArgs e)
@@ -112,6 +101,7 @@ namespace Liverpool_new
             {
                 //string nopedido = mc.AbrirArchivo(AbrirArchivo.FileName);
                 List<string> nopedido = mc.AbrirArchivo(AbrirArchivo.FileName);
+                cbPedidos.Items.Clear();
                 if (nopedido.Count != 0)
                 {
                     foreach (string s in nopedido)
@@ -120,9 +110,9 @@ namespace Liverpool_new
                     
                     }
                     cbPedidos.SelectedIndex = 0;
-
-                    LlenarChecklistModelos();
                     
+                    LlenarChecklistModelos(mc.Seleccion_Pedido(cbPedidos.Text));
+                    cbBasicos.Checked = mc.TieneBasicos();
                     Operaciones.Show();
                     InfoBox.Show();
                 }
@@ -137,7 +127,8 @@ namespace Liverpool_new
 
         private void cbPedidos_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            LlenarChecklistModelos(mc.Seleccion_Pedido(cbPedidos.Text));
+            cbBasicos.Checked = mc.TieneBasicos();
         }
 
         private void btnBasicos_Click(object sender, EventArgs e)

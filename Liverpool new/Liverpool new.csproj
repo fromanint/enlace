@@ -67,6 +67,7 @@
     <Compile Include="Class\ControlBasicos.cs" />
     <Compile Include="Class\ControlTiendas.cs" />
     <Compile Include="Class\Control_Eti_Cajas.cs" />
+    <Compile Include="Class\Gen_Etiquetas.cs" />
     <Compile Include="Class\HojaPedidoExcel.cs" />
     <Compile Include="Class\Modelo.cs" />
     <Compile Include="Class\Pedido.cs" />
