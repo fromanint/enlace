@@ -65,9 +65,9 @@ namespace Liverpool_new.Class
             try
             {
                 MainClass mc = new MainClass();
-                string path = "\\Output\\" + pedido;
+                string path = "Output\\" + pedido;
                 mc.CrearDirectorio(path);
-                path += "\\" + pedido;
+                path ="\\" + path + "\\" + pedido;
                 
                 xlWorkBook.SaveAs(System.Windows.Forms.Application.StartupPath + path, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
                 return "Archivo Guardado en: " + path + ".xlsx";
@@ -98,7 +98,7 @@ namespace Liverpool_new.Class
             string msg = "";
             List<int> ColumnaNegra=CrearEncabezado(modelo);
             List<int> RenglonColor=LlenarTiendas();
-            SacarTotales();
+            SacarTotales(ColumnaNegra);
             DarFormato(ColumnaNegra,RenglonColor);
             return msg;
     }
@@ -209,7 +209,7 @@ namespace Liverpool_new.Class
             return 0;
         } 
 
-        void SacarTotales()
+        void SacarTotales(List<int> columnaModelo)
         {
             int no_columna = BuscarColumna("Total");
             
@@ -221,9 +221,19 @@ namespace Liverpool_new.Class
             }
 
             //total por modelo
+            int aux=3;
             for (int i = 3; i < no_columna; i++)
             {
-                xlWorkSheet.Cells[renglon, i].FormulaLocal = "=SUMA(" + (celdas)i  + "2:" + (celdas)i + (renglon-1) + ")";  
+               
+                if (columnaModelo.Contains(i))
+                {
+                    xlWorkSheet.Cells[renglon, i].FormulaLocal = "=SUMA(" + (celdas)aux + renglon + ":" + (celdas)(i-1) + renglon + ")";
+                    xlWorkSheet.Cells[renglon, i].Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
+                    aux = i + 1;
+                }
+                else { 
+                xlWorkSheet.Cells[renglon, i].FormulaLocal = "=SUMA(" + (celdas)i + "2:" + (celdas)i + (renglon - 1) + ")";
+             }
             }
             //total liverpool
             renglon++;

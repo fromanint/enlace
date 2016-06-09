@@ -54,7 +54,7 @@ namespace Liverpool_new.Class
             string plantilla1 = System.Windows.Forms.Application.StartupPath.ToString() + "\\Resources\\Plantillas\\PLANTILLA1.dotx";
             string plantilla2 = System.Windows.Forms.Application.StartupPath.ToString() + "\\Resources\\Plantillas\\PLANTILLA2.dotx";
             int index = 0;
-            for (int i = 0; i < max+1; i++)
+            for (int i = 0; i < max; i++)
             {
                  index = i;
                 InsertarPlantilla(plantilla1);
@@ -70,6 +70,7 @@ namespace Liverpool_new.Class
                 index += max;
                 ReemplazarPlantilla(tiendaspedido[index], "XX2", "YY2", "TIENDA2");
             }
+                index++;
             for (int i = index; i < tiendaspedido.Count-1; i++)
             {
                 index = i;
@@ -135,9 +136,9 @@ namespace Liverpool_new.Class
             try
             {
                 MainClass mc = new MainClass();
-                string path = "\\Output\\"+ pedido ;
+                string path = "Output\\" + pedido;
                 mc.CrearDirectorio(path);
-                path += "\\" + pedido;
+                path = "\\" + path + "\\" + pedido;
                 oWordDoc.SaveAs2(System.Windows.Forms.Application.StartupPath + path, ref oMissing, ref oMissing, ref oMissing,
                     ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing,
                     ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing,
