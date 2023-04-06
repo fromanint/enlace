@@ -37,3 +37,32 @@ D:\Proyectos\enlace\Liverpool new\obj\Debug\Liverpool new.csproj.ResolveComRefer
 D:\Proyectos\enlace\Liverpool new\obj\Debug\Liverpool_new.Formularios.Basicos.resources
 D:\Proyectos\enlace\Liverpool new\bin\Debug\Resources\Listatiendas.xml
 D:\Proyectos\enlace\Liverpool new\bin\Debug\Resources\Listabasicos.xml
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Resources\Plantillas\PLANTILLA1.dotx
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Resources\Plantillas\PLANTILLA2.dotx
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Resources\Listatiendas.xml
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Resources\Listabasicos.xml
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Resources\PlantillaEtiqutas\ZDARC.EXE
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Resources\PlantillaEtiqutas\63217328.LSF
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Resources\PlantillaEtiqutas\plantilla.468
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Resources\PlantillaEtiqutas\X2FH2F.ETQ
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Liverpool new.exe.config
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Liverpool new.exe
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Liverpool new.pdb
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool new.csproj.AssemblyReference.cache
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool new.csproj.ResolveComReference.cache
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool_new.Formularios.About.resources
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool_new.Formularios.Basicos.resources
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool_new.Formularios.Eti_Cajas.resources
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool_new.Principal.resources
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool_new.Formularios.Tiendas.resources
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool_new.Properties.Resources.resources
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool new.csproj.GenerateResource.cache
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool new.csproj.CoreCompileInputs.cache
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool new.exe
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool new.pdb
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Xceed.Document.NET.dll
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Xceed.Pdf.dll
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Xceed.Words.NET.dll
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Xceed.Document.NET.xml
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Xceed.Words.NET.xml
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool new.csproj.CopyComplete

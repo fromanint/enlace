@@ -15,6 +15,7 @@ namespace Liverpool_new
     public partial class Principal : Form
     {
         public static MainClass mc = new MainClass();
+        public static Etiquetas_Embarque etiquetas_Embarque = new Etiquetas_Embarque();
 
 
         public Principal()
@@ -44,9 +45,24 @@ namespace Liverpool_new
 
         private void btnEmbarque_Click(object sender, EventArgs e)
         {
-            Eti_Cajas frm = new Eti_Cajas();
-            frm.Show();
-       
+            // Eti_Cajas frm = new Eti_Cajas();
+            //frm.Show();
+           
+            if (AbrirArchivo.ShowDialog() == DialogResult.OK)
+            {
+         
+                string s = etiquetas_Embarque.LeerArchivoCSV(AbrirArchivo.FileName);
+
+                    MessageBox.Show(s);
+               
+            }else
+            {
+              
+                 MessageBox.Show("No se seleccionó ningún archivo.");
+
+            }
+            
+
         }
 
         private void btnPedidoExcel_Click(object sender, EventArgs e)
@@ -123,6 +139,13 @@ namespace Liverpool_new
                     MessageBox.Show("No es un archivo valido");
                 }
             }
+            else
+            {
+
+                MessageBox.Show("No se seleccionó ningún archivo.");
+
+            }
+
         }
 
         private void cbPedidos_SelectedIndexChanged(object sender, EventArgs e)

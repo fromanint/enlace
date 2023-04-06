@@ -49,21 +49,20 @@
             // 
             // Operaciones
             // 
-            this.Operaciones.Controls.Add(this.btnEmbarque);
             this.Operaciones.Controls.Add(this.btnEtiVestidos);
             this.Operaciones.Controls.Add(this.btnPedidoExcel);
-            this.Operaciones.Location = new System.Drawing.Point(33, 173);
+            this.Operaciones.Location = new System.Drawing.Point(166, 173);
             this.Operaciones.Name = "Operaciones";
-            this.Operaciones.Size = new System.Drawing.Size(526, 81);
+            this.Operaciones.Size = new System.Drawing.Size(393, 81);
             this.Operaciones.TabIndex = 0;
             this.Operaciones.TabStop = false;
             this.Operaciones.Text = "Operaciones";
             // 
             // btnEmbarque
             // 
-            this.btnEmbarque.Location = new System.Drawing.Point(256, 21);
+            this.btnEmbarque.Location = new System.Drawing.Point(33, 56);
             this.btnEmbarque.Name = "btnEmbarque";
-            this.btnEmbarque.Size = new System.Drawing.Size(99, 51);
+            this.btnEmbarque.Size = new System.Drawing.Size(75, 54);
             this.btnEmbarque.TabIndex = 1;
             this.btnEmbarque.Text = "Generar Etiquetas Embarque";
             this.btnEmbarque.UseVisualStyleBackColor = true;
@@ -191,6 +190,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 261);
+            this.Controls.Add(this.btnEmbarque);
             this.Controls.Add(this.InfoBox);
             this.Controls.Add(this.Abrir);
             this.Controls.Add(this.btnVersion);

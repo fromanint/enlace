@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Liverpool_new.Class;
 
+
 namespace Liverpool_new.Formularios
 {
     public partial class Eti_Cajas : Form
@@ -21,7 +22,7 @@ namespace Liverpool_new.Formularios
 
         private void Eti_Cajas_Load(object sender, EventArgs e)
         {
-            ListaTiendas.Items.Clear();
+           /* ListaTiendas.Items.Clear();
             List<int> pedido = Principal.mc.pedido.Select(x => x.ObtenerTienda()).Distinct().ToList();
             pedido.Sort();
 
@@ -30,7 +31,8 @@ namespace Liverpool_new.Formularios
                 int tienda = pedido[i]; 
                 ListaTiendas.Items.Add(tienda.ToString());
                 ListaTiendas.SetItemChecked(i, true);
-            }
+            }*/
+           
         }
         //seleccionar todo
         private void check_Click(object sender, EventArgs e)
