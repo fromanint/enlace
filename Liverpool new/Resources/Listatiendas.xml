@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="yes"?>
-<ListaTiendas>
+<DocumentElement>
   <Tienda>
     <No_tienda>1</No_tienda>
     <Tipo>l</Tipo>
@@ -47,18 +47,18 @@
   </Tienda>
   <Tienda>
     <No_tienda>10</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F XALAPA</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L XALAPA PLAZA CRYSTAL</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>11</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F CORDOBA</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L CORDOBA PLAZA CRYSTAL</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>12</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F VILLAHERMOSA</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L VILLAHERMOSA CRYSTAL</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>14</No_tienda>
@@ -67,23 +67,23 @@
   </Tienda>
   <Tienda>
     <No_tienda>15</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F PUEBLA</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L PUEBLA CRYSTAL</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>16</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F COATZACOALCOS</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L COATZACOALCOS PLAZA CRYSTAL</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>17</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F POZA RICA</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L POZA RICA PLAZA CRYSTAL</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>19</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F TAPACHULA</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L TAPACHULA</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>21</No_tienda>
@@ -97,8 +97,8 @@
   </Tienda>
   <Tienda>
     <No_tienda>25</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F GDL GRAN PLAZA</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L GRAN PLAZA</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>26</No_tienda>
@@ -107,13 +107,13 @@
   </Tienda>
   <Tienda>
     <No_tienda>27</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F ACAPULCO</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L ACAPULCO GALERIAS</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>28</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F VERACRUZ</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L VERACRUZ MOCAMBO</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>29</No_tienda>
@@ -127,8 +127,8 @@
   </Tienda>
   <Tienda>
     <No_tienda>34</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F CHIHUAHUA</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L CHIHUAHUA PRESIDENTES</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>35</No_tienda>
@@ -137,13 +137,13 @@
   </Tienda>
   <Tienda>
     <No_tienda>36</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F SAN LUIS POTOSI</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L SAN LUIS POTOSI EL DORADO</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>37</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F OAXACA</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L OAXACA</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>39</No_tienda>
@@ -202,28 +202,28 @@
   </Tienda>
   <Tienda>
     <No_tienda>51</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F GDL CENTRO</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L GDL CENTRO</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>52</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F GDL PLAZA DEL SOL</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L PLAZA DEL SOL</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>53</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F GDL PLAZA PATRIA</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L PLAZA PATRIA</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>54</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F TEPIC</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L TEPIC</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>55</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F MZT CENTRO</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L MZT CENTRO</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>56</No_tienda>
@@ -237,13 +237,13 @@
   </Tienda>
   <Tienda>
     <No_tienda>58</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F AGUASCALIENTES</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L AGS VILLASUNCION</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>60</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F CD. OBREGON</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L CD. OBREGON</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>61</No_tienda>
@@ -416,6 +416,16 @@
     <Nombre>L ORIZABA</Nombre>
   </Tienda>
   <Tienda>
+    <No_tienda>124</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>BODEGA HB</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>125</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>CD IZCALLI</Nombre>
+  </Tienda>
+  <Tienda>
     <No_tienda>126</No_tienda>
     <Tipo>l</Tipo>
     <Nombre>L CIUDAD VICTORIA</Nombre>
@@ -446,6 +456,31 @@
     <Nombre>L. TOLUCA</Nombre>
   </Tienda>
   <Tienda>
+    <No_tienda>141</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>URIANGATO</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>159</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>SALTILLO</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>160</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>F. LOS MOCHIS</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>161</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>TIJUANA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>164</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>BUENAVISTA</Nombre>
+  </Tienda>
+  <Tienda>
     <No_tienda>165</No_tienda>
     <Tipo>l</Tipo>
     <Nombre>L. VERACRUZ  DORADO</Nombre>
@@ -454,6 +489,11 @@
     <No_tienda>166</No_tienda>
     <Tipo>l</Tipo>
     <Nombre>L. LEON ARENA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>168</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L SANTA ANITA</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>169</No_tienda>
@@ -471,9 +511,34 @@
     <Nombre>L. QUERETARON ANTEA</Nombre>
   </Tienda>
   <Tienda>
+    <No_tienda>175</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. TAMPICO ARENA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>176</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>LIVERPOOL COYOACAN T MITICA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>177</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>LIV. TLAXCALA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>178</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. ZAMORA</Nombre>
+  </Tienda>
+  <Tienda>
     <No_tienda>180</No_tienda>
     <Tipo>l</Tipo>
     <Nombre>L. COACALCO</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>181</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>F. VALLE DE CHALCO</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>182</No_tienda>
@@ -496,14 +561,29 @@
     <Nombre>F. CHIMALHUACAN</Nombre>
   </Tienda>
   <Tienda>
+    <No_tienda>189</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. MONTERREY LA FE.</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>191</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>LIV TUXTLA ORIENTE</Nombre>
+  </Tienda>
+  <Tienda>
     <No_tienda>192</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F. CUAUTLA</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L. CUAUTLA</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>194</No_tienda>
-    <Tipo>f</Tipo>
-    <Nombre>F. SALAMANCA</Nombre>
+    <Tipo>l</Tipo>
+    <Nombre>L. SALAMANCA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>195</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. TECAMAC</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>196</No_tienda>
@@ -514,6 +594,16 @@
     <No_tienda>197</No_tienda>
     <Tipo>f</Tipo>
     <Nombre>F. TEXCOCO</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>199</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>LIV TOREO</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>204</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L LA ISLA</Nombre>
   </Tienda>
   <Tienda>
     <No_tienda>300</No_tienda>
@@ -570,4 +660,99 @@
     <Tipo>l</Tipo>
     <Nombre>L. MEXICALI</Nombre>
   </Tienda>
-</ListaTiendas>
+  <Tienda>
+    <No_tienda>386</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>LIV PUEBLA ZARAGOZA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>387</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>HERMOSILLO GALERIAS</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>388</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>TUXTEPEC</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>396</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>F. NICOLAS ROMERO</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>397</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>FAB. APIZACO</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>454</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L GUANAJUATO</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>455</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>LIV PASEO QUERETARO</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>456</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>PARQUE LAS ANTENAS</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>457</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L MONTERREY ESFERA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>458</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>LIV MERIDA LA ISLA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>459</No_tienda>
+    <Tipo>f</Tipo>
+    <Nombre>FAB TONALA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>463</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. OAXACA PLAZA BELLA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>468</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L MONCLOVA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>469</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>LIV. ATLIXCO</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>471</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>LIV. FRESNILLO</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>472</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>L. COMITAN</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>688</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>LIV. TIJUANA</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>766</No_tienda>
+    <Tipo>l</Tipo>
+    <Nombre>LIV TEPEYAC</Nombre>
+  </Tienda>
+  <Tienda>
+    <No_tienda>967</No_tienda>
+    <Tipo>L</Tipo>
+    <Nombre>LIV ZAPOPAN LA PERLA</Nombre>
+  </Tienda>
+</DocumentElement>

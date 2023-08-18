@@ -64,3 +64,7 @@ C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Xceed.Document.NE
 C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Xceed.Pdf.dll
 C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Xceed.Words.NET.dll
 C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool new.csproj.CopyComplete
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Liverpool new.exe.manifest
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\bin\Debug\Liverpool new.application
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool new.exe.manifest
+C:\Users\roman\Documents\GitHub\enlace\Liverpool new\obj\Debug\Liverpool new.application

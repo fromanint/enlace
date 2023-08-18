@@ -270,10 +270,11 @@ namespace Liverpool_new.Class
                 Modelo mod = new Modelo(ped.ObtenerModelo(), ped.ObtenerColor(), ped.ObtenerTalla());
                 listamodelo.Add(mod);
             }
+            
             listamodelo = OrdenarListaModelo(listamodelo,basicos);
             listamodelo = EliminarRepetidos(listamodelo,true);
 
-            string msg = hpe.Iniciar(OrdenarPedidoTienda(pedido),listamodelo);
+            string msg = hpe.Iniciar(OrdenarPedidoTienda(pedido),listamodelo,basicos);
            // string msg = hpe.Iniciar(OrdenarPedidoTienda(),OrdenarListaModelo());
             return msg;
         }

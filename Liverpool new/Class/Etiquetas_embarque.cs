@@ -17,6 +17,8 @@ namespace Liverpool_new.Class
         ControlTiendas DetalleTiendas = new ControlTiendas();
         List<int> tiendaspedido = new List<int>();
         List<string> contenedores = new List<string>();
+        List<int> no_Contendor = new List<int>();
+        List<int> max_Contendor = new List<int>();
 
         DocX oWordDoc;
 
@@ -24,14 +26,26 @@ namespace Liverpool_new.Class
         {
             bool non = false;
             tiendaspedido.Clear(); // Limpiar lista tiendaspedido
+            contenedores.Clear();
+            no_Contendor.Clear();
+            max_Contendor.Clear();
             foreach (var tc in tiendaContenedores)
             {
                 int tienda = tc.Key;
                 List<string> conte = tc.Value;
+                int cantidadContenedores = conte.Count; // ver la cantidad de contendores
+                int cont_Contendor = 1; //contador de contenedores
                 foreach (string contenedor in conte)
                 {
-                    tiendaspedido.Add(tienda); // Agregar número de tienda
-                    contenedores.Add(contenedor); // Agregar contenedor
+                    if(contenedor != "")
+                    { 
+                        tiendaspedido.Add(tienda); // Agregar número de tienda
+                        contenedores.Add(contenedor); // Agregar contenedor
+                        max_Contendor.Add(cantidadContenedores);
+                        no_Contendor.Add(cont_Contendor);
+                        cont_Contendor++;
+                    }
+
                 }
             }
             int repeticiones = (tiendaspedido.Count - 1) / eti_x_hoja;
@@ -67,7 +81,7 @@ namespace Liverpool_new.Class
 
                     ordenCompra = columns[0];
                     int tienda = int.Parse(columns[2]);
-                    fechaEntrega = columns[11];
+                    fechaEntrega = columns[17];
                     string contenedor = columns[15];
 
                     if (!tiendaContenedores.ContainsKey(tienda))
@@ -168,11 +182,11 @@ namespace Liverpool_new.Class
         }
 
 
-        void ReemplazarPlantilla(int no_tienda, int no_caja = 1, string rno_caja = "XX1", string rcant_caja = "YY1", string rtienda = "TIENDA1", string idContenedor = "CONT-X", int cant_cajas = 1)
+        void ReemplazarPlantilla(int no_tienda, int no_caja = 1, string rno_caja = "XX1", string rcant_caja = "YY1", string rtienda = "TIENDA1", string idContenedor = "CONT-X")
         {
             // BuscarReemplazar(rno_caja, no_caja.ToString("D2"));
-            BuscarReemplazar(rno_caja, "01");
-            BuscarReemplazar(rcant_caja, cant_cajas.ToString("D2"));
+            BuscarReemplazar(rno_caja, no_Contendor[no_caja - 1].ToString("D2"));
+            BuscarReemplazar(rcant_caja,  max_Contendor[no_caja - 1].ToString("D2"));
             BuscarReemplazar(rtienda, no_tienda.ToString("D3") + "       " + DetalleTiendas.ObtenerNombre(no_tienda.ToString()));
             BuscarReemplazar(idContenedor, contenedores[no_caja - 1]); // Añadido para reemplazar el contenedor
         }

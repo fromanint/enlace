@@ -8,7 +8,7 @@ namespace Liverpool_new.Class
 {
     public class Modelo
     {
-        string modelo;
+        public string modelo ;
         string color;
         string talla;
         string fecha_embarque;
@@ -32,6 +32,11 @@ namespace Liverpool_new.Class
             fecha = fecha.Remove(0, 3);
             fecha_embarque = fecha;
             }
+            if (talla.Length >= 3)
+            {
+                talla = talla.Substring(0, 3);
+            }
+            
         }
         public Modelo()
         { }

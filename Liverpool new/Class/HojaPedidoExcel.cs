@@ -29,10 +29,13 @@ namespace Liverpool_new.Class
         //diccionario columna de excel , (string poner excel(talla), string modelo no+ char);
         Dictionary<int, Tuple<string,string>> encabezado = new Dictionary<int, Tuple<string, string>>();
 
-        public string Iniciar(List<Pedido> ped,List<Modelo> mod) {
+        bool basicos;
+
+        public string Iniciar(List<Pedido> ped,List<Modelo> mod, bool sonBasicos) {
             string msg = "";
             pedido = ped;
             modelo = mod;
+            basicos = sonBasicos;
             msg = AbrirDocumento();
             if (msg == "")
             {
@@ -42,7 +45,7 @@ namespace Liverpool_new.Class
                     msg = GuardarDocumento(pedido[0].GetNoPedido());
                 }
             }
-            
+           
             //Obtenerceldas por numero
             /*celdas cel = (celdas)1;
             Console.Write(cel);*/
@@ -108,30 +111,34 @@ namespace Liverpool_new.Class
             encabezado.Add(1, Tuple.Create("Tienda",""));           
             encabezado.Add(2, Tuple.Create("",""));
             ColumnaNegra.Add(2);
-            for (int i = 0; i < modelo.Count - 1; i++,j++)
-            {
-
-                encabezado.Add(j, Tuple.Create(modelo[i].ObtenerTalla(), modelo[i].ObtenerModelo() + modelo[i].ObtenerColorChar()));
-                j++;
-                i++;
-                try
+          //  if(!basicos)
+            { 
+                for (int i = 0; i <= modelo.Count - 1; i++,j++)
                 {
-                    while (modelo[i].Equals(modelo[i - 1], false, true))
-                    {
-                        encabezado.Add(j, Tuple.Create(modelo[i].ObtenerTalla(), modelo[i].ObtenerModelo() + modelo[i].ObtenerColorChar()));
-                        i++;
+
+                     encabezado.Add(j, Tuple.Create(modelo[i].ObtenerTalla(), modelo[i].ObtenerModelo() + modelo[i].ObtenerColorChar()));
                         j++;
+                        i++;
+                        try
+                        {
+                        while (modelo[i].Equals(modelo[i - 1], false, true))
+                            {
+                            encabezado.Add(j, Tuple.Create(modelo[i].ObtenerTalla(), modelo[i].ObtenerModelo() + modelo[i].ObtenerColorChar()));
+                            i++;
+                            j++;
  
-                    }
-                }
-                catch { }
+                            }
+                           }
+                        catch { }
                
-                i--;
+                        i--;
                 
-                encabezado.Add(j, Tuple.Create(modelo[i].ObtenerModelo() + modelo[i].ObtenerColorChar(),""));
-                ColumnaNegra.Add(j);
+                        encabezado.Add(j, Tuple.Create(modelo[i].ObtenerModelo() + modelo[i].ObtenerColorChar(),""));
+                         ColumnaNegra.Add(j);
                 
+                }
             }
+        
             encabezado.Add(j, Tuple.Create("Total", ""));
             j++;
             encabezado.Add(j, Tuple.Create("Cajas", ""));
